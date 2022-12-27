@@ -117,7 +117,7 @@
           }
         ],
         "ui": {
-          "active": true,
+          "active": false,
           "left": 8,
           "top": 89.7778,
           "zIndex": 22,
