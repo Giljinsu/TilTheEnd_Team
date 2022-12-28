@@ -23,7 +23,7 @@
       <div class="container">
         <form action="./index.html">
           <div class="mb-3">
-            <div class="border bg-primary bg-opacity-10 mb-1 p-1 rounded">1. 현대 자동차의 브랜드 이미지에 만족하십니까? - 답은 한가지만 선택가능.</div>
+            <div class="border bg-primary bg-opacity-10 mb-1 p-1 rounded">1. 현대 자동차의 브랜드 이미지에 만족하십니까?</div>
             <div class="row">
               <div class="col">
                 <input type="radio" class="form-check-input" name="survey_1" id="radio1-1" value="survey1-1" />
@@ -49,7 +49,7 @@
           </div>
 
           <div class="mb-3">
-            <div class="border bg-primary bg-opacity-10 mb-1 p-1 rounded">2. 현대 차량의 주행성능에 만족하십니까? - 답은 한가지만 선택가능.</div>
+            <div class="border bg-primary bg-opacity-10 mb-1 p-1 rounded">2. 현대 차량의 주행성능에 만족하십니까?</div>
             <div class="row">
               <div class="col">
                 <input type="radio" class="form-check-input" name="survey_2" id="radio2-1" value="survey2-1" />
@@ -74,7 +74,7 @@
             </div>
           </div>
           <div class="mb-3">
-            <div class="border bg-primary bg-opacity-10 mb-1 p-1 rounded">3. 현대 차량의 가격에 만족하십니까? - 답은 한가지만 선택가능.</div>
+            <div class="border bg-primary bg-opacity-10 mb-1 p-1 rounded">3. 현대 차량의 가격에 만족하십니까?</div>
             <div class="row">
               <div class="col">
                 <input type="radio" class="form-check-input" name="survey_3" id="radio3-1" value="survey3-1" />
@@ -100,7 +100,7 @@
           </div>
 
           <div class="mb-3">
-            <div class="border bg-primary bg-opacity-10 mb-1 p-1 rounded">4. 현대 차량의 디자인에 만족하십니까? - 답은 한가지만 선택가능.</div>
+            <div class="border bg-primary bg-opacity-10 mb-1 p-1 rounded">4. 현대 차량의 디자인에 만족하십니까?</div>
             <div class="row">
               <div class="col">
                 <input type="radio" class="form-check-input" name="survey_4" id="radio4-1" value="survey4-1" />
@@ -126,7 +126,7 @@
           </div>
 
           <div class="mb-3">
-            <div class="border bg-primary bg-opacity-10 mb-1 p-1 rounded">5. 현대 차량의 내구성에 만족하십니까? - 답은 한가지만 선택가능.</div>
+            <div class="border bg-primary bg-opacity-10 mb-1 p-1 rounded">5. 현대 차량의 내구성에 만족하십니까?</div>
             <div class="row">
               <div class="col">
                 <input type="radio" class="form-check-input" name="survey_5" id="radio5-1" value="survey5-1" />
@@ -152,7 +152,7 @@
           </div>
 
           <div class="mb-3">
-            <div class="border bg-primary bg-opacity-10 mb-1 p-1 rounded">6. 현대 직원의 응대에 만족하십니까? - 답은 한가지만 선택가능.</div>
+            <div class="border bg-primary bg-opacity-10 mb-1 p-1 rounded">6. 현대 직원의 응대에 만족하십니까?</div>
             <div class="row">
               <div class="col">
                 <input type="radio" class="form-check-input" name="survey_6" id="radio6-1" value="survey6-1" />
