@@ -77,7 +77,7 @@
           </tr>
         </table>
         <div class="text-center">
-          <a href="./logpage.html" class="btn btn-warning">뒤로가기</a>
+          <a href="./logpage.jsp" class="btn btn-warning">뒤로가기</a>
           <button class="btn btn-warning" type="submit">회원가입</button>
         </div>
       </form>
