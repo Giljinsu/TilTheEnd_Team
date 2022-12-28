@@ -21,7 +21,7 @@
 
     <main class="d-flex align-items-center mt-5" style="height: 40rem">
       <div class="container">
-        <form action="../index.html">
+        <form action="./index.html">
           <div class="mb-3">
             <div class="border bg-primary bg-opacity-10 mb-1 p-1 rounded">1. 현대 자동차의 브랜드 이미지에 만족하십니까? - 답은 한가지만 선택가능.</div>
             <div class="row">
