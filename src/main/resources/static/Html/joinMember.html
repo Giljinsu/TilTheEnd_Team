@@ -15,7 +15,7 @@
   <body>
     <div class="container">
       <div class="fs-3 text-center mt-3 mb-4">회원가입</div>
-      <form action="../index.html">
+      <form action="../index.html" method="get">
         <table class="table">
           <tr>
             <th>이름</th>
@@ -67,7 +67,14 @@
           </tr>
           <tr>
             <th>ID</th>
-            <td><input class="form-control" type="text" name="ID" id="" /></td>
+            <td class="row">
+              <div class="col-8">
+                <input class="form-control" type="text" name="ID" id="" />
+              </div>
+              <div class="col-4">
+                <button class="btn btn-outline-primary">중복확인</button>
+              </div>
+            </td>
           </tr>
           <tr>
             <th>PW</th>
