@@ -33,6 +33,7 @@ public class SurveyPageDB {
         ResultSet resultSet = statement.executeQuery(query);
         HashMap<String, Object> result = null;
         while (resultSet.next()) {
+            result = new HashMap<>();
             result.put("QUESTION_ID", resultSet.getString("QUESTION_ID"));
             result.put("ORDERS", resultSet.getString("ORDERS"));
             result.put("ANSWER", resultSet.getInt("ANSWER"));
