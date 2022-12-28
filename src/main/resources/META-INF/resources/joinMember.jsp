@@ -42,7 +42,7 @@
             <th>전화번호</th>
             <td class="row">
               <div class="col-2">
-                <select class="form-select text-center" name="identification number">
+                <select class="form-select text-center" name="identification_number">
                   <option value="010">010</option>
                   <option value="011">011</option>
                 </select>
