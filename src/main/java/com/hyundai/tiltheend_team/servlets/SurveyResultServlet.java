@@ -4,6 +4,6 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 
 @WebServlet(urlPatterns = "/resultServlet")
-public class ResultServlet extends HttpServlet {
+public class SurveyResultServlet extends HttpServlet {
 
 }
