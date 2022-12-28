@@ -3,9 +3,9 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -73.01851629254269,
+    "scrollTop": -74.01851629254269,
     "scrollLeft": 0,
-    "zoomLevel": 0.9,
+    "zoomLevel": 1,
     "show": {
       "tableComment": true,
       "columnComment": true,
@@ -93,6 +93,29 @@
             "id": "4ac65375-caba-4868-a05b-59b727360e2c"
           },
           {
+            "name": "PRIVILEGES",
+            "comment": "권한",
+            "dataType": "VARCHAR(200)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 79.30810546875,
+              "widthComment": 60,
+              "widthDataType": 94.94873046875,
+              "widthDefault": 60
+            },
+            "id": "78b21c13-0083-4a9b-81f6-cbcbe0518d76"
+          },
+          {
             "name": "USER_NAME",
             "comment": "이름",
             "dataType": "VARCHAR(200)",
@@ -162,29 +185,6 @@
             "id": "1a828cae-3490-49df-8c39-1004659472f3"
           },
           {
-            "name": "AGE",
-            "comment": "나이",
-            "dataType": "VARCHAR(200)",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 60,
-              "widthComment": 60,
-              "widthDataType": 94.94873046875,
-              "widthDefault": 60
-            },
-            "id": "1d347e9b-e22b-4f91-b4ec-650f7d4a8b18"
-          },
-          {
             "name": "EMAIL",
             "comment": "이메일",
             "dataType": "VARCHAR(200)",
@@ -206,36 +206,13 @@
               "widthDefault": 60
             },
             "id": "d13e72df-f3eb-40f4-a2d7-a91696895420"
-          },
-          {
-            "name": "PRIVILEGES",
-            "comment": "권한",
-            "dataType": "VARCHAR(200)",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 79.30810546875,
-              "widthComment": 60,
-              "widthDataType": 94.94873046875,
-              "widthDefault": 60
-            },
-            "id": "78b21c13-0083-4a9b-81f6-cbcbe0518d76"
           }
         ],
         "ui": {
           "active": false,
-          "left": 0,
-          "top": 62.7778,
-          "zIndex": 26,
+          "left": 10,
+          "top": 88.7778,
+          "zIndex": 92,
           "widthName": 60,
           "widthComment": 60
         },
@@ -530,8 +507,8 @@
           "columnIds": [
             "38de5353-266d-4897-a6e3-2e6854676065"
           ],
-          "x": 426.51416015625,
-          "y": 179.2778,
+          "x": 436.51416015625,
+          "y": 195.0278,
           "direction": "right"
         },
         "end": {
