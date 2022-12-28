@@ -48,7 +48,7 @@
         "columns": [
           {
             "name": "USER_ID",
-            "comment": "",
+            "comment": "아이디",
             "dataType": "VARCHAR(200)",
             "default": "",
             "option": {
@@ -71,14 +71,14 @@
           },
           {
             "name": "USER_PW",
-            "comment": "",
+            "comment": "비밀번호",
             "dataType": "VARCHAR(200)",
             "default": "",
             "option": {
               "autoIncrement": false,
               "primaryKey": false,
               "unique": false,
-              "notNull": false
+              "notNull": true
             },
             "ui": {
               "active": false,
@@ -94,7 +94,7 @@
           },
           {
             "name": "PRIVILEGES",
-            "comment": "",
+            "comment": "권한",
             "dataType": "VARCHAR(200)",
             "default": "",
             "option": {
@@ -114,13 +114,105 @@
               "widthDefault": 60
             },
             "id": "78b21c13-0083-4a9b-81f6-cbcbe0518d76"
+          },
+          {
+            "name": "USER_NAME",
+            "comment": "이름",
+            "dataType": "VARCHAR(200)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 82.9072265625,
+              "widthComment": 60,
+              "widthDataType": 94.94873046875,
+              "widthDefault": 60
+            },
+            "id": "fe37c749-0772-4375-a5cd-0e50d3646d3c"
+          },
+          {
+            "name": "USER_SEX",
+            "comment": "성별",
+            "dataType": "VARCHAR(200)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 71.36083984375,
+              "widthComment": 60,
+              "widthDataType": 94.94873046875,
+              "widthDefault": 60
+            },
+            "id": "419bb578-4c79-45ff-b653-ed3c5b859bb6"
+          },
+          {
+            "name": "PHONENUMBER",
+            "comment": "전화번호",
+            "dataType": "VARCHAR(200)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 104.5654296875,
+              "widthComment": 60,
+              "widthDataType": 94.94873046875,
+              "widthDefault": 60
+            },
+            "id": "1a828cae-3490-49df-8c39-1004659472f3"
+          },
+          {
+            "name": "EMAIL",
+            "comment": "이메일",
+            "dataType": "VARCHAR(200)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 94.94873046875,
+              "widthDefault": 60
+            },
+            "id": "d13e72df-f3eb-40f4-a2d7-a91696895420"
           }
         ],
         "ui": {
           "active": false,
-          "left": 8,
-          "top": 89.7778,
-          "zIndex": 22,
+          "left": 10,
+          "top": 88.7778,
+          "zIndex": 92,
           "widthName": 60,
           "widthComment": 60
         },
@@ -244,7 +336,7 @@
           "active": false,
           "left": 1,
           "top": 331,
-          "zIndex": 3,
+          "zIndex": 2,
           "widthName": 60,
           "widthComment": 60
         },
@@ -329,7 +421,7 @@
           "active": false,
           "left": 524,
           "top": 91,
-          "zIndex": 4,
+          "zIndex": 3,
           "widthName": 111.078125,
           "widthComment": 60
         },
@@ -391,7 +483,7 @@
           "active": false,
           "left": 530,
           "top": 327.8889,
-          "zIndex": 5,
+          "zIndex": 4,
           "widthName": 69.89453125,
           "widthComment": 60
         },
@@ -415,8 +507,8 @@
           "columnIds": [
             "38de5353-266d-4897-a6e3-2e6854676065"
           ],
-          "x": 409.2568359375,
-          "y": 155.0278,
+          "x": 436.51416015625,
+          "y": 195.0278,
           "direction": "right"
         },
         "end": {
