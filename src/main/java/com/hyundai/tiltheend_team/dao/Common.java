@@ -7,7 +7,7 @@ import java.sql.Statement;
 
 public class Common {
     public Statement getStatement() {
-        String url = "jdbc:mysql://localhost:3306/toys_JavaWithDB";
+        String url = "jdbc:mysql://localhost:3306/simple_tiltheend";
         String user = "root";
         String password = "*khacademy!";
 

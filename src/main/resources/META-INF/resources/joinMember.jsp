@@ -17,7 +17,7 @@
     <%@ include file="header_notlogin.jsp" %>
     <div class="container">
       <div class="fs-3 text-center mt-3 mb-4">회원가입</div>
-      <form action="../index.html" method="get">
+      <form action="/joinMemberServlet" method="get">
         <table class="table">
           <tr>
             <th>이름</th>
