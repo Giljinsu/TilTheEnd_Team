@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,14 +15,13 @@
     <link rel="stylesheet" href="./css/commons.css" />
   </head>
   <body>
+    <%@ include file="header_notlogin.jsp" %>
     <form action="../index.html" method="get">
       <!-- 링크 추가 필요 지금은 현재페이지에서 값을 가지고 주소에 출력 -->
       <div class="container">
         <div class="text-center m-3">
           <div>
-            <span
-              ><img src="../docs/현대차량로고.png" width="100" alt="" />
-            </span>
+            <span><img src="../docs/현대차량로고.png" width="100" alt="" /> </span>
             <span class="fs-2">로그인</span>
             <!-- 이미지 링크 수정해야 보임 -->
           </div>
@@ -30,36 +30,27 @@
           <div class="row mt-5">
             <div class="col-12 d-flex justify-content-center mb-2">
               <div>
-                <input
-                  type="text"
-                  class="form-control"
-                  name="userId"
-                  placeholder="Id"
-                />
+                <input type="text" class="form-control" name="userId" placeholder="Id" />
               </div>
             </div>
 
             <div class="col-12 d-flex justify-content-center">
               <div>
-                <input
-                  type="password"
-                  class="form-control"
-                  name="userPassword"
-                  placeholder="Password"
-                />
+                <input type="password" class="form-control" name="userPassword" placeholder="Password" />
               </div>
             </div>
 
             <div class="col-12 d-flex justify-content-center mt-5">
               <div>
                 <button type="submit" class="btn bg-warning">로그인</button>
-                <a href="./joinMember.html" class="btn btn-warning">회원가입</a>
+                <a href="./joinMember.jsp" class="btn btn-warning">회원가입</a>
               </div>
             </div>
           </div>
         </div>
       </div>
     </form>
+    <%@ include file="footer.jsp" %>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"

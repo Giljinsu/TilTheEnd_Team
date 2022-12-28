@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>통계삭제화면</title>
+    <title>메인화면</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -19,17 +19,9 @@
   <body>
     <%@ include file="header_login.jsp" %>
 
-    <main class="d-flex align-items-center" style="height: 40rem">
+    <main class="" style="background-color: rgba(248, 243, 242)">
       <div class="container">
-        <form action="#">
-          <div class="container d-flex justify-content-center">
-            <div class="input-group w-50">
-              <label for="" class="input-group-text bg-secondary bg-opacity-50">비밀번호</label>
-              <input type="password" name="password" class="form-control" />
-              <button class="btn bg-secondary bg-opacity-50" type="submit">삭제</button>
-            </div>
-          </div>
-        </form>
+        <img src="../../static/images/현대자동차.PNG" width="100%" alt="" />
       </div>
     </main>
 

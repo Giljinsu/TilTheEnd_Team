@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,6 +14,7 @@
     />
   </head>
   <body>
+    <%@ include file="header_notlogin.jsp" %>
     <div class="container">
       <div class="fs-3 text-center mt-3 mb-4">회원가입</div>
       <form action="../index.html" method="get">
@@ -40,10 +42,7 @@
             <th>전화번호</th>
             <td class="row">
               <div class="col-2">
-                <select
-                  class="form-select text-center"
-                  name="identification number"
-                >
+                <select class="form-select text-center" name="identification number">
                   <option value="010">010</option>
                   <option value="011">011</option>
                 </select>
@@ -56,13 +55,7 @@
           <tr>
             <th>이메일</th>
             <td>
-              <input
-                class="form-control"
-                type="email"
-                name="email"
-                placeholder="asdas@naver.com"
-                id=""
-              />
+              <input class="form-control" type="email" name="email" placeholder="asdas@naver.com" id="" />
             </td>
           </tr>
           <tr>
@@ -89,7 +82,7 @@
         </div>
       </form>
     </div>
-
+    <%@ include file="footer.jsp" %>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
@@ -97,4 +90,3 @@
     ></script>
   </body>
 </html>
-
