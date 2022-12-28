@@ -20,8 +20,7 @@ public class JoinMemberServlet extends HttpServlet {
         JoinMember joinMember = new JoinMember();
         String isFinish = request.getParameter("isFinish");
         String ID = request.getParameter("ID");
-        idnotDup = false;
-        
+
         RequestDispatcher requestDispatcher = null;        
         if(!isFinish.equals("fin")) {
             if(ID != "") {
