@@ -15,19 +15,46 @@
   </head>
   <body>
     <%@ include file="header_notlogin.jsp" %>
-    <div class="container">
+      
+    <%
+      String name = request.getParameter("name");
+      String age = request.getParameter("age");
+      String sex = request.getParameter("sex");
+      String identification_number = request.getParameter("identification_number"); // ex) 010 011
+      String number = request.getParameter("number"); // 전화번호 나머지
+      String email = request.getParameter("email");
+      String ID = request.getParameter("ID");
+      String PW = request.getParameter("PW");
+      boolean isFinBtn = true;
+      if(name == null) { // 처음값 지우기
+        name="";
+        age="";
+        sex="";
+        identification_number="";
+        number="";
+        email="";
+        ID="";
+        PW="";
+      }
+    %>
+        <div class="container">
       <div class="fs-3 text-center mt-3 mb-4">회원가입</div>
-      <form action="/joinMemberServlet" method="get">
+      <form action="/joinMemberServlet" onsubmit="return validateForm()" name="joinForm" method="get">
         <table class="table">
           <tr>
             <th>이름</th>
             <td>
-              <input class="form-control" type="text" name="name" id="" />
+              <input class="form-control" type="text" name="name" value="<%=name%>" id="name"/>
+            <div id="nameError"></div>
             </td>
           </tr>
           <tr>
             <th>나이</th>
-            <td><input class="form-control" type="text" name="age" id="" /></td>
+            <td>
+              <input class="form-control" type="text"  name="age" value="<%=age%>" id="age"/>
+              <div id="ageError"></div>
+            </td>
+            
           </tr>
           <tr>
             <th>성별</th>
@@ -42,47 +69,78 @@
             <th>전화번호</th>
             <td class="row">
               <div class="col-2">
-                <select class="form-select text-center" name="identification_number">
+                <select
+                  class="form-select text-center"
+                  name="identification number"
+                >
                   <option value="010">010</option>
                   <option value="011">011</option>
                 </select>
               </div>
               <div class="col">
-                <input class="form-control" type="text" name="number" id="" />
+                <input class="form-control" type="text" name="number"  value="<%=number%>" id="number"/>
               </div>
+              <div id="numberError"></div>
             </td>
           </tr>
           <tr>
             <th>이메일</th>
             <td>
-              <input class="form-control" type="email" name="email" placeholder="asdas@naver.com" id="" />
+              <input
+                class="form-control"
+                type="email"
+                name="email"
+                placeholder="asdas@naver.com"
+                id="email"
+                value="<%=email%>"
+              />
+              <div id="emailError"></div>
             </td>
           </tr>
           <tr>
             <th>ID</th>
             <td class="row">
-              <div class="col-8">
-                <input class="form-control" type="text" name="ID" id="" />
-              </div>
-              <div class="col-4">
-                <button class="btn btn-outline-primary">중복확인</button>
-              </div>
+                <div class="col-8">
+                  <input class="form-control" type="text" name="ID" value="<%=ID%>" id="ID"/>
+                </div>
+                <div class="col-4">
+                  <button name="isFinish" value="notFin" class="btn btn-outline-primary" onclick="validateForm(true)" type="submit">아이디 중복확인</button>
+                </div>
+                <% // id 중복
+                String isDup = (String)request.getAttribute("isDup");
+                if(isDup!=null) {
+                if(isDup.equals("중복된 ID 입니다")) { %>
+               <div style="color:red;">
+                <%=isDup%>
+               </div>
+               <% } else { %>
+                <div style="color:red;">
+                <%=isDup%>
+               </div>
+              <% } } %>
+              <div id="idError"></div>
             </td>
           </tr>
           <tr>
             <th>PW</th>
             <td>
-              <input class="form-control" type="password" name="PW" id="" />
+              <input class="form-control" type="password" name="PW" value="<%=PW%>" id="PW"/>
+            <div id="pwError"></div>
             </td>
           </tr>
         </table>
-        <div class="text-center">
-          <a href="./logpage.jsp" class="btn btn-warning">뒤로가기</a>
-          <button class="btn btn-warning" type="submit">회원가입</button>
+        <div class="text-center mb-3">
+          <a href="./logpage.html" class="btn btn-warning">뒤로가기</a>
+          <button name="isFinish" onclick="validateForm(false)" value="fin" class="btn btn-warning">
+            회원가입
+          </button>
         </div>
       </form>
     </div>
+
+
     <%@ include file="footer.jsp" %>
+    <script src="./js/joinMemberScript.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"

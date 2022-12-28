@@ -15,7 +15,7 @@
   <body>
     <div class="container">
       <div class="fs-3 text-center mt-3 mb-4">회원가입</div>
-      <form action="../index.html" method="get">
+      <form action="./joinMember.html" method="get" onsubmit="return validateForm()">
         <table class="table">
           <tr>
             <th>이름</th>
@@ -68,12 +68,13 @@
           <tr>
             <th>ID</th>
             <td class="row">
-              <div class="col-8">
-                <input class="form-control" type="text" name="ID" id="" />
-              </div>
-              <div class="col-4">
-                <button class="btn btn-outline-primary">중복확인</button>
-              </div>
+                <div class="col-8">
+                  <input class="form-control" type="text" name="id" id="ID" />
+                </div>
+                <div class="col">
+                  <button class="btn btn-outline-primary" type="" >아이디 중복확인</button>
+                </div>
+                <div class="" id="idError"></div>
             </td>
           </tr>
           <tr>
@@ -85,7 +86,9 @@
         </table>
         <div class="text-center">
           <a href="./logpage.html" class="btn btn-warning">뒤로가기</a>
-          <button class="btn btn-warning" type="submit">회원가입</button>
+          <button name="isFinish" value="fin" class="btn btn-warning" type="submit">
+            회원가입
+          </button>
         </div>
       </form>
     </div>
@@ -95,6 +98,7 @@
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
+    <script src="../js/joinMemberScript.js"></script>
   </body>
 </html>
 
