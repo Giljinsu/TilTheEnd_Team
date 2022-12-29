@@ -25,7 +25,10 @@
         <div>
           <table class="table table-striped">
             <thead>
-              <tr class="bg-warning">
+              <tr>
+                <th colspan="7" class="text-center bg-info bg-warning">회원별 통계</th>
+              </tr>
+              <tr class="bg-warning bg-opacity-25">
                 <th>이름</th>
                 <th>질문(1)</th>
                 <th>질문(2)</th>
