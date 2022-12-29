@@ -31,7 +31,7 @@
             <div class="border bg-primary bg-opacity-10 mb-1 p-1 rounded"><%= (i+1) %>. <%= questions_list.get("QUESTION") %></div>
             <div class="row">
               <div class="col">
-                <% for(int j=0;j<5;j++){ 
+                <% for(int j=0;j<answer.size();j++){ 
                 HashMap<String, Object> answers_list = answer.get(j);%>
                 <input type="radio" class="form-check-input" name="survey_<%= (i+1) %>" id="radio<%= (i+1) %>-<%= (j+1) %>" value="survey<%= (i+1) %>-<%= (j+1) %>" />
                 <label for="radio1-1" class="form-check-label"> (<%= (j+1) %>)<%= answers_list.get("ANSWER") %></label>

@@ -26,7 +26,7 @@
           </a>
           <div class="collapse navbar-collapse d-flex-md justify-content-between" id="collapseId">
             <div class="navbar-nav">
-              <a href="./surveyPage.jsp" class="nav-link">설문지 작성</a>
+              <a href="./surveyPageServlet" class="nav-link">설문지 작성</a>
               <div class="dropdown">
                 <a href="" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">통계</a>
                 <div class="dropdown-menu">
