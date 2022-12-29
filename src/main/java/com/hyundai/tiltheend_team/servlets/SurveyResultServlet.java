@@ -1,6 +1,9 @@
 package com.hyundai.tiltheend_team.servlets;
 
 import java.io.IOException;
+import java.sql.SQLException;
+
+import com.hyundai.tiltheend_team.dao.SurveyResultDB;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -17,6 +20,15 @@ public class SurveyResultServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8"); // 한글세팅
 
+        SurveyResultDB surveyResultDB = new SurveyResultDB();
+        String count = null;
+        try {
+            count = surveyResultDB.getCount("Q1", "E1");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("count:" + count);
         String path = "./survey_result.jsp";
         RequestDispatcher requestDispatcher = request.getRequestDispatcher(path);
         requestDispatcher.forward(request, response);
