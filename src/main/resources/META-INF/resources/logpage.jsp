@@ -16,7 +16,7 @@
   </head>
   <body>
     <%@ include file="header_notlogin.jsp" %>
-    <form action="/logPageServlet" method="get">
+    <form class="" action="/login/logPageServlet" method="get">
       <!-- 링크 추가 필요 지금은 현재페이지에서 값을 가지고 주소에 출력 -->
       <div class="container">
         <div class="text-center m-3">
@@ -41,15 +41,17 @@
             </div>
 
             <div class="col-12 d-flex justify-content-center mt-5">
-              <div>
-                <button type="submit" class="btn bg-warning">로그인</button>
-                <a href="./joinMemberServlet?idnotDup=false" class="btn btn-warning">회원가입</a>
+              <div class ="row" style="width:15rem">
+                <button type="submit" class="btn bg-warning col me-3">로그인</button>
+    </form>
+                <form class="d-inline col ps-0 pe-0" action="/joinMemberServlet" method="post">
+                  <button class="btn btn-warning" style="width:100%" name="idnotDup" value="false" type="submit">회원가입</button>
+                </form> 
               </div>
             </div>
           </div>
         </div>
       </div>
-    </form>
     <%@ include file="footer.jsp" %>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"

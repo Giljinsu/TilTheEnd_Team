@@ -18,7 +18,7 @@
     <header class="bg border-bottom">
       <nav class="navbar navbar-expand-sm fw-bold">
         <div class="container">
-          <a href="./index.html" class="navbar-brand">
+          <a href="/index.html" class="navbar-brand">
             <img src="https://www.hyundai.com/static/images/hyu_logo_og_image.jpg" width="150" class="" alt="" />
           </a>
           <a href="#collapseId" class="navbar-toggler" data-bs-toggle="collapse">
@@ -26,13 +26,13 @@
           </a>
           <div class="collapse navbar-collapse d-flex-md justify-content-between" id="collapseId">
             <div class="navbar-nav">
-              <a href="./surveyPageServlet" class="nav-link">설문지 작성</a>
+              <a href="/surveyPageServlet" class="nav-link">설문지 작성</a>
               <div class="dropdown">
                 <a href="" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">통계</a>
                 <div class="dropdown-menu">
-                  <a href="./result.jsp" class="dropdown-item">전체 통계</a>
-                  <a href="./client_result.jsp" class="dropdown-item">회원별 통계</a>
-                  <a href="./removePage.jsp" class="dropdown-item">통계 삭제</a>
+                  <a href="/result.jsp" class="dropdown-item">전체 통계</a>
+                  <a href="/client_result.jsp" class="dropdown-item">회원별 통계</a>
+                  <a href="/removePage.jsp" class="dropdown-item">통계 삭제</a>
                 </div>
               </div>
             </div>
