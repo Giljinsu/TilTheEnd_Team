@@ -2,6 +2,7 @@ package com.hyundai.tiltheend_team.servlets;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import com.hyundai.tiltheend_team.dao.SurveyResultDB;
 
@@ -22,13 +23,20 @@ public class SurveyResultServlet extends HttpServlet {
 
         SurveyResultDB surveyResultDB = new SurveyResultDB();
         String count = null;
+        ArrayList questionUids = new ArrayList<>();
+        ArrayList answerUids = new ArrayList<>();
+        ArrayList entireStat = new ArrayList<>();
+        String question = null;
         try {
-            count = surveyResultDB.getCount("Q1", "E1");
+            entireStat = surveyResultDB.getEntireCount();
+            // question = surveyResultDB.getQuestion("Q2");
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        // System.out.println(question);
 
-        System.out.println("count:" + count);
+        request.setAttribute("entireStat", entireStat);
         String path = "./survey_result.jsp";
         RequestDispatcher requestDispatcher = request.getRequestDispatcher(path);
         requestDispatcher.forward(request, response);
