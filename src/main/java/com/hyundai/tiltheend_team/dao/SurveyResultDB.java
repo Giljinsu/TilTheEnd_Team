@@ -22,7 +22,7 @@ public class SurveyResultDB {
         String count = null;
         while (resultSet.next()) {
             count = resultSet.getString("COUNT");
-            System.out.println(count);
+            // System.out.println(count);
         }
         return count;
     }
@@ -35,14 +35,14 @@ public class SurveyResultDB {
             ArrayList<String> answersUidList = getAnswersUidList(questionUid);
             ArrayList<String> answers = new ArrayList<>();
 
-            System.out.println("questionUid: " + questionUid);
+            // System.out.println("questionUid: " + questionUid);
             statRow.put("questionUid", questionUid);
             statRow.put("question", getQuestion(questionUid));
 
             ArrayList answersCount = new ArrayList<>();
             for (String answerUid : answersUidList) {
                 String count = getCount(questionUid, answerUid);
-                System.out.println("getCount:" + count);
+                // System.out.println("getCount:" + count);
                 answersCount.add(count);
                 String answer = null;
                 answer = getAnswer(answerUid);
