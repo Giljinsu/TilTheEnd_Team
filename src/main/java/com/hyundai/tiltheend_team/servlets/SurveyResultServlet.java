@@ -29,12 +29,9 @@ public class SurveyResultServlet extends HttpServlet {
         String question = null;
         try {
             entireStat = surveyResultDB.getEntireCount();
-            // question = surveyResultDB.getQuestion("Q2");
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        // System.out.println(question);
 
         request.setAttribute("entireStat", entireStat);
         String path = "./survey_result.jsp";

@@ -26,14 +26,14 @@
           <table class="table table-striped">
             <thead>
               <tr class="bg-warning">
-                <th colspan="6" class="text-center">전체통계</th>
+                <th colspan="5" class="text-center">전체통계</th>
               </tr>
             </thead>
             <tbody>
               <%
                 ArrayList entireStat = new ArrayList<>();
                 entireStat = (ArrayList) request.getAttribute("entireStat");
-                System.out.println(entireStat);
+                // System.out.println(entireStat);
                 for(int i = 0;i<entireStat.size();i++) {
                   HashMap statRow = (HashMap) entireStat.get(i);
                   String question = (String) statRow.get("question");
@@ -41,14 +41,14 @@
                   ArrayList answersCount = (ArrayList) statRow.get("answersCount");
               %>
                   <tr>
-                    <th colspan="6"><%=question    %></th>
+                    <th colspan="5" class="text-left"><%=question    %></th>
                   </tr>
                   
                   <tr>
                     <%
                       for (int j=0;j<answers.size();j++) { 
                     %>
-                        <td><%=answers.get(j)%> : <%=answersCount.get(j)%></td>
+                        <td class="text-center"><%=answers.get(j)%> : <%=answersCount.get(j)%></td>
                     <%
                       } 
                     %>
