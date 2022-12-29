@@ -29,9 +29,6 @@ public class SurveyPageServlet extends HttpServlet {
             answer = surveyPageDB.getAnswersList();
             for (int i = 0; i < question.size(); i++) {
                 HashMap<String, Object> questions_list = question.get(i);
-                System.out.print(questions_list.get("QUESTION_ID"));
-                System.out.print(questions_list.get("QUESTION"));
-                System.out.println(questions_list.get("ORDERS"));
             }
 
             answer = surveyPageDB.getAnswersList();
@@ -41,8 +38,6 @@ public class SurveyPageServlet extends HttpServlet {
         }
         for (int i = 0; i < answer.size(); i++) {
             HashMap<String, Object> answers_list = answer.get(i);
-            System.out.print(answers_list.get("ORDERS"));
-            System.out.println(answers_list.get("ANSWER"));
         }
 
         request.setAttribute("question", question);
