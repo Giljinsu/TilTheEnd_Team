@@ -1,5 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="java.util.HashMap,java.util.ArrayList" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %> <%@ page import="java.util.HashMap,java.util.ArrayList" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,32 +17,32 @@
   </head>
 
   <body>
-    <% 
-      HashMap<String, Object> question = (HashMap<String, Object>)request.getAttribute("question");
-      ArrayList answer = (ArrayList) request.getAttribute("answer");
+    <% ArrayList<HashMap> question = (ArrayList<HashMap>)request.getAttribute("question");
+      ArrayList<HashMap> answer = (ArrayList<HashMap>) request.getAttribute("answer"); 
     %>
     <%@ include file="header_login.jsp" %>
 
-    <% if(question != null){ %>
     <main class="d-flex align-items-center mt-5" style="height: 40rem">
       <div class="container">
         <form action="./index.html">
-          <% for(int i=0;i<6;i++){ %>
-            <div class="mb-3">
-            <div class="border bg-primary bg-opacity-10 mb-1 p-1 rounded"><%= question.get("ORDERS") %>. <%= question.get("QUESTION") %></div>
+          <div class="mb-3">
+            <% for(int i=0;i<question.size();i++){ 
+              HashMap<String, Object> questions_list = question.get(i);%>
+            <div class="border bg-primary bg-opacity-10 mb-1 p-1 rounded"><%= (i+1) %>. <%= questions_list.get("QUESTION") %></div>
             <div class="row">
-              <% for(int j=0;j<5;i++){ %>
               <div class="col">
-                <input type="radio" class="form-check-input" name="survey_<%= i %>" id="radio<%= i %>-<%= j %>" value="survey1-1" />
-                <label for="radio1-1" class="form-check-label"> (<%= (j+1) %>)<%= answer.get(j) %>></label>
+                <% for(int j=0;j<5;j++){ 
+                HashMap<String, Object> answers_list = answer.get(j);%>
+                <input type="radio" class="form-check-input" name="survey_<%= (i+1) %>" id="radio<%= (i+1) %>-<%= (j+1) %>" value="survey<%= (i+1) %>-<%= (j+1) %>" />
+                <label for="radio1-1" class="form-check-label"> (<%= (j+1) %>)<%= answers_list.get("ANSWER") %></label>
+                <% } %>
               </div>
-              <% } %>
+            </div>
+            <% } %>
+            <div class="d-flex justify-content-center mt-5">
+              <button type="submit" class="btn bg-primary bg-opacity-10">제출하기</button>
             </div>
           </div>
-          <% } %>
-      <% } else { %>
-        <div>question is null</div>
-        <% } %>
         </form>
       </div>
     </main>

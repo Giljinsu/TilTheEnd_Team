@@ -10,9 +10,9 @@ public class SurveyPageDB {
     public ArrayList<HashMap> getAnswersList() throws SQLException {
         Common common = new Common();
         Statement statement = common.getStatement();
-        String query = "SELECT SURVEY.QUESTION_ID, ANSWER.ORDERS, ANSWER.ANSWER" +
-                "FROM SURVEY INNER JOIN ANSWER" +
-                "ON SURVEY.ANSWER_ID = ANSWER.ANSWER_ID" +
+        String query = "SELECT SURVEY.QUESTION_ID, ANSWER.ORDERS, ANSWER.ANSWER " +
+                "FROM SURVEY INNER JOIN ANSWER " +
+                "ON SURVEY.ANSWER_ID = ANSWER.ANSWER_ID " +
                 "ORDER BY QUESTION_ID";
         ResultSet resultSet = statement.executeQuery(query);
         ArrayList<HashMap> answerList = new ArrayList<HashMap>();
@@ -26,17 +26,18 @@ public class SurveyPageDB {
         return answerList;
     }
 
-    public HashMap<String, Object> getQuestion() throws SQLException {
+    public ArrayList<HashMap> getQuestion() throws SQLException {
         Common common = new Common();
         Statement statement = common.getStatement();
         String query = "SELECT * FROM QUESTION";
         ResultSet resultSet = statement.executeQuery(query);
-        HashMap<String, Object> result = null;
+        ArrayList<HashMap> result = new ArrayList<HashMap>();
         while (resultSet.next()) {
-            result = new HashMap<>();
-            result.put("QUESTION_ID", resultSet.getString("QUESTION_ID"));
-            result.put("ORDERS", resultSet.getString("ORDERS"));
-            result.put("QUESTION", resultSet.getString("QUESTION"));
+            HashMap<String, Object> question = new HashMap<String, Object>();
+            question.put("QUESTION_ID", resultSet.getString("QUESTION_ID"));
+            question.put("ORDERS", resultSet.getString("ORDERS"));
+            question.put("QUESTION", resultSet.getString("QUESTION"));
+            result.add(question);
         }
         return result;
     }

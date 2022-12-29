@@ -22,15 +22,17 @@ public class SurveyPageServlet extends HttpServlet {
 
         SurveyPageDB surveyPageDB = new SurveyPageDB();
         ArrayList<HashMap> answer = null;
-        HashMap<String, Object> question = null;
+        ArrayList<HashMap> question = null;
 
         try {
             question = surveyPageDB.getQuestion();
             answer = surveyPageDB.getAnswersList();
-
-            System.out.println(question.get("QUESTION_ID"));
-            System.out.println(question.get("QUESTION"));
-            System.out.println(question.get("ORDERS"));
+            for (int i = 0; i < question.size(); i++) {
+                HashMap<String, Object> questions_list = question.get(i);
+                System.out.print(questions_list.get("QUESTION_ID"));
+                System.out.print(questions_list.get("QUESTION"));
+                System.out.println(questions_list.get("ORDERS"));
+            }
 
             answer = surveyPageDB.getAnswersList();
         } catch (SQLException e) {
@@ -39,7 +41,7 @@ public class SurveyPageServlet extends HttpServlet {
         }
         for (int i = 0; i < answer.size(); i++) {
             HashMap<String, Object> answers_list = answer.get(i);
-            System.out.println(answers_list.get("ORDERS"));
+            System.out.print(answers_list.get("ORDERS"));
             System.out.println(answers_list.get("ANSWER"));
         }
 
