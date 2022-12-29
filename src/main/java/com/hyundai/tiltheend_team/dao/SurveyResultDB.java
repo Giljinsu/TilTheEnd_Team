@@ -33,16 +33,23 @@ public class SurveyResultDB {
         for (String questionUid : questionsUidList) {
             HashMap<String, Object> statRow = new HashMap<>();
             ArrayList<String> answersUidList = getAnswersUidList(questionUid);
+            ArrayList<String> answers = new ArrayList<>();
+
             System.out.println("questionUid: " + questionUid);
             statRow.put("questionUid", questionUid);
             statRow.put("question", getQuestion(questionUid));
+
             ArrayList answersCount = new ArrayList<>();
-            for (String answer : answersUidList) {
-                String count = getCount(questionUid, answer);
+            for (String answerUid : answersUidList) {
+                String count = getCount(questionUid, answerUid);
                 System.out.println("getCount:" + count);
                 answersCount.add(count);
+                String answer = null;
+                answer = getAnswer(answerUid);
+                answers.add(answer);
             }
             statRow.put("answersCount", answersCount);
+            statRow.put("answers", answers);
             entireStat.add(statRow);
         }
         return entireStat;
@@ -89,13 +96,13 @@ public class SurveyResultDB {
     public String getAnswer(String answerUid) throws SQLException {
         Common common = new Common();
         Statement statement = common.getStatement();
-        String query = "SELECT ANSWER FROM ANSWER";
+        String query = "SELECT ANSWER FROM ANSWER WHERE ANSWER_ID='" + answerUid + "'";
         ResultSet resultSet = statement.executeQuery(query);
-        String question = null;
+        String answer = null;
         while (resultSet.next()) {
-            question = resultSet.getString("QUESTION");
+            answer = resultSet.getString("ANSWER");
         }
-        return question;
+        return answer;
     }
 
 }

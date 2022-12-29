@@ -37,14 +37,24 @@
                 for(int i = 0;i<entireStat.size();i++) {
                   HashMap statRow = (HashMap) entireStat.get(i);
                   String question = (String) statRow.get("question");
-                  String answerId = (String> statRow.get("")
+                  ArrayList answers = (ArrayList) statRow.get("answers");
+                  ArrayList answersCount = (ArrayList) statRow.get("answersCount");
               %>
                   <tr>
                     <th colspan="6"><%=question    %></th>
                   </tr>
                   
                   <tr>
-                    <td>count</td>
+                    <%
+                      for (int j=0;j<answers.size();j++) { 
+                    %>
+                        
+                        <td><%=answers.get(j)%> : <%=answersCount.get(j)%></td>
+                    
+                    <%
+                      } 
+                    %>
+                    
                   </tr>
 
               <%    
