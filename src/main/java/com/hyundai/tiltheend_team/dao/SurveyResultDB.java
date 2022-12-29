@@ -159,33 +159,4 @@ public class SurveyResultDB {
         }
         return answerList;
     }
-
-    // 회원별 통계 결과값 가져오기
-    // public String getStatsById() throws SQLException {
-    // Common common = new Common();
-    // Statement statement = common.getStatement();
-    // String query = "SELECT * FROM USERS_ANSWER";
-    // ResultSet resultSet = statement.executeQuery(query);
-
-    // ArrayList usersWithSurvey = new ArrayList<>();
-    // HashMap usersWithSurveyRow = new HashMap<>();
-    // HashMap answerResult = new HashMap<>();
-
-    // String priorUserId = null;
-    // while (resultSet.next()) {
-    // String userId = resultSet.getString("USER_ID");
-    // String questionId = resultSet.getString("QUESTION_ID");
-    // String answerId = resultSet.getString("ANSWER_ID");
-    // if (!userId.equals(priorUserId)) {
-
-    // usersWithSurveyRow.put("user_id", userId);
-
-    // }
-    // priorUserId = userId;
-    // answerResult.put(questionId, answerId);
-    // usersWithSurveyRow.put("answerResult", answerResult);
-    // }
-    // return answer;
-    // }
-
 }

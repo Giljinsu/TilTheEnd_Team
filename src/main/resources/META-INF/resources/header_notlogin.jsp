@@ -37,7 +37,7 @@
               </div>
             </div>
             <div class="navbar-nav">
-              <a href="/logPageServlet" class="nav-link">로그인/회원가입</a>
+              <a href="/logPage.jsp" class="nav-link">로그인/회원가입</a>
             </div>
           </div>
         </div>
