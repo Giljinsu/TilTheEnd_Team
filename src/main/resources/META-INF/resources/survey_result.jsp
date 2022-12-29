@@ -48,20 +48,14 @@
                     <%
                       for (int j=0;j<answers.size();j++) { 
                     %>
-                        
                         <td><%=answers.get(j)%> : <%=answersCount.get(j)%></td>
-                    
                     <%
                       } 
                     %>
-                    
                   </tr>
-
               <%    
                 }
               %>
-                
-              
             </tbody>
           </table>
         </div>
