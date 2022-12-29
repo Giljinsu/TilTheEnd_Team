@@ -43,7 +43,7 @@
             <div class="col-12 d-flex justify-content-center mt-5">
               <div>
                 <button type="submit" class="btn bg-warning">로그인</button>
-                <a href="./joinMember.jsp" class="btn btn-warning">회원가입</a>
+                <a href="./joinMemberServlet?idnotDup=false" class="btn btn-warning">회원가입</a>
               </div>
             </div>
           </div>

@@ -20,9 +20,13 @@ public class JoinMemberServlet extends HttpServlet {
         JoinMember joinMember = new JoinMember();
         String isFinish = request.getParameter("isFinish");
         String ID = request.getParameter("ID");
-
+        // response.sendRedirect("/joinMember.jsp");
+        if(request.getParameter("idnotDup")!=null){
+            idnotDup = Boolean.parseBoolean(request.getParameter("idnotDup")); 
+        }
+        
         RequestDispatcher requestDispatcher = null;        
-        if(!isFinish.equals("fin")) {
+        if(isFinish!=null&&!isFinish.equals("fin")) {
             if(ID != "") {
                 int isTrue = joinMember.idCheck(ID);
                 if(isTrue==1) {
@@ -56,8 +60,11 @@ public class JoinMemberServlet extends HttpServlet {
             joinMember.insertUser(name, age, sex, identification_number, number, email, ID, PW);
             requestDispatcher = request.getRequestDispatcher("/index.html");
             requestDispatcher.forward(request, response);
+            idnotDup = false;
         } else {
-            request.setAttribute("isDup", "ID중복체크 해주세요!");
+            if(isFinish!=null){
+                request.setAttribute("isDup", "ID중복체크 해주세요!");
+            }
             requestDispatcher = request.getRequestDispatcher("/joinMember.jsp");
             requestDispatcher.forward(request, response);
         }
