@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.ArrayList, java.util.HashMap" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -25,63 +26,36 @@
           <table class="table table-striped">
             <thead>
               <tr class="bg-warning">
-                <th>Question)</th>
-                <th>답(1)</th>
-                <th>답(2)</th>
-                <th>답(3)</th>
-                <th>답(4)</th>
-                <th>답(5)</th>
+                <th colspan="5" class="text-center">전체통계</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th>질문1</th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <th>질문2</th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <th>질문3</th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <th>질문4</th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <th>질문5</th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <th>질문6</th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
+              <%
+                ArrayList entireStat = new ArrayList<>();
+                entireStat = (ArrayList) request.getAttribute("entireStat");
+                // System.out.println(entireStat);
+                for(int i = 0;i<entireStat.size();i++) {
+                  HashMap statRow = (HashMap) entireStat.get(i);
+                  String question = (String) statRow.get("question");
+                  ArrayList answers = (ArrayList) statRow.get("answers");
+                  ArrayList answersCount = (ArrayList) statRow.get("answersCount");
+              %>
+                  <tr>
+                    <th colspan="5" class="text-left"><%=question    %></th>
+                  </tr>
+                  
+                  <tr>
+                    <%
+                      for (int j=0;j<answers.size();j++) { 
+                    %>
+                        <td class="text-center"><%=answers.get(j)%> : <%=answersCount.get(j)%></td>
+                    <%
+                      } 
+                    %>
+                  </tr>
+              <%    
+                }
+              %>
             </tbody>
           </table>
         </div>
