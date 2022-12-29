@@ -20,8 +20,8 @@
     <%@ include file="header_login.jsp" %>
 
     <main class="" style="background-color: rgba(248, 243, 242)">
-      <div class="container">
-        <img src="../../static/images/현대자동차.PNG" width="100%" alt="" />
+      <div class="container fs-1">
+        <div class="pt-5 pb-5 text-center">관리자페이지입니다.</div>
       </div>
     </main>
 
