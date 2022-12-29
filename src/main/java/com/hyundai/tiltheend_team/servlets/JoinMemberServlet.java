@@ -50,7 +50,7 @@ public class JoinMemberServlet extends HttpServlet {
             String age = request.getParameter("age");
             String sex = request.getParameter("sex");
             String identification_number = request.getParameter("identification_number"); // ex) 010 011
-            String number = request.getParameter("number"); // 전화번호 나머지
+            String number = identification_number+"-"+request.getParameter("number"); // 전화번호 나머지
             String email = request.getParameter("email");
             ID = request.getParameter("ID");
             String PW = request.getParameter("PW");
