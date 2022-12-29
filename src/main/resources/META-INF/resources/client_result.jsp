@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.ArrayList, java.util.HashMap" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -30,37 +31,34 @@
                 <th>질문(2)</th>
                 <th>질문(3)</th>
                 <th>질문(4)</th>
+                <th>질문(5)</th>
+                <th>질문(6)</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th>설문자(1)</th>
-                <td>3</td>
-                <td>2</td>
-                <td>4</td>
-                <td>1</td>
-              </tr>
-              <tr>
-                <th>설문자(2)</th>
-                <td>1</td>
-                <td>2</td>
-                <td>4</td>
-                <td>3</td>
-              </tr>
-              <tr>
-                <th>설문자(3)</th>
-                <td>2</td>
-                <td>1</td>
-                <td>4</td>
-                <td>3</td>
-              </tr>
-              <tr>
-                <th>설문자(4)</th>
-                <td>4</td>
-                <td>3</td>
-                <td>1</td>
-                <td>2</td>
-              </tr>
+              <% 
+                ArrayList usersListWithSurvey = (ArrayList) request.getAttribute("usersListWithSurvey");
+                for(int i=0; i<usersListWithSurvey.size(); i++) {
+                  HashMap row = (HashMap) usersListWithSurvey.get(i);
+                  String userId = (String) row.get("userId");
+                  String userName = (String) row.get("userName");
+                  ArrayList answerList = (ArrayList) row.get("answerList");
+              %>
+                <tr>
+                  <td><%=userName%></td>
+                  <%
+                    for (int j=0; j<answerList.size(); j++) {
+                      String answer = (String) answerList.get(j);
+                  %>
+                      <td><%=answer%></td>
+                  <%    
+                    }
+                  %>
+                </tr>
+              <%
+                }
+              %>
+              
             </tbody>
           </table>
         </div>

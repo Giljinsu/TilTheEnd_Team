@@ -22,11 +22,7 @@ public class SurveyResultServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8"); // 한글세팅
 
         SurveyResultDB surveyResultDB = new SurveyResultDB();
-        String count = null;
-        ArrayList questionUids = new ArrayList<>();
-        ArrayList answerUids = new ArrayList<>();
         ArrayList entireStat = new ArrayList<>();
-        String question = null;
         try {
             entireStat = surveyResultDB.getEntireCount();
         } catch (SQLException e) {

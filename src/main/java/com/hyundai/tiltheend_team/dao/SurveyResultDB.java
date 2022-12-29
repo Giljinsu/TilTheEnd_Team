@@ -6,8 +6,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import org.springframework.util.SystemPropertyUtils;
-
 public class SurveyResultDB {
     // 전체통계
     public String getCount(String questionsUid, String answersUid) throws SQLException {
@@ -104,5 +102,90 @@ public class SurveyResultDB {
         }
         return answer;
     }
+
+    public ArrayList getUsersListWithSurvey() throws SQLException {
+        Common common = new Common();
+        Statement statement = common.getStatement();
+        String query = "SELECT * FROM USERS";
+        ResultSet resultSet = statement.executeQuery(query);
+        ArrayList usersListWithSurvey = new ArrayList<>();
+        while (resultSet.next()) {
+            HashMap row = new HashMap<>();
+            String userId = resultSet.getString("USER_ID");
+            String userName = resultSet.getString("USER_NAME");
+            if (hasSurvey(userId)) {// 만약에 survey를 한 유저라면
+                row.put("userId", userId);
+                row.put("userName", userName);
+                ArrayList answerList = getSurveyById(userId);
+                row.put("answerList", answerList);
+                usersListWithSurvey.add(row);
+            }
+        }
+        return usersListWithSurvey;
+    }
+
+    // user가 survey를 했는지 알아내는 펑션
+    public boolean hasSurvey(String userId) throws SQLException {
+        Common common = new Common();
+        Statement statement = common.getStatement();
+        String query = "SELECT COUNT(USER_ID) AS COUNT FROM USERS_ANSWER WHERE USER_ID='" + userId + "'";
+        ResultSet resultSet = statement.executeQuery(query);
+        String countStr = null;
+        while (resultSet.next()) {
+            countStr = resultSet.getString("COUNT");
+        }
+        int count = Integer.parseInt(countStr);
+        boolean hasSurvey;
+        if (count > 0) {
+            hasSurvey = true;
+        } else {
+            hasSurvey = false;
+        }
+        return hasSurvey;
+    }
+
+    // user가 survey답변한 내용을 불러오는 펑션, answer 문자열을 리스트 형태로 돌려줌.
+    public ArrayList getSurveyById(String userId) throws SQLException {
+        Common common = new Common();
+        Statement statement = common.getStatement();
+        String query = "SELECT * FROM USERS_ANSWER WHERE USER_ID='" + userId + "'";
+        ResultSet resultSet = statement.executeQuery(query);
+        ArrayList answerList = new ArrayList();
+        while (resultSet.next()) {
+            String questionId = resultSet.getString("QUESTION_ID");
+            String answerId = resultSet.getString("ANSWER_ID");
+            String answerStr = getAnswer(answerId);
+            answerList.add(answerStr);
+        }
+        return answerList;
+    }
+
+    // 회원별 통계 결과값 가져오기
+    // public String getStatsById() throws SQLException {
+    // Common common = new Common();
+    // Statement statement = common.getStatement();
+    // String query = "SELECT * FROM USERS_ANSWER";
+    // ResultSet resultSet = statement.executeQuery(query);
+
+    // ArrayList usersWithSurvey = new ArrayList<>();
+    // HashMap usersWithSurveyRow = new HashMap<>();
+    // HashMap answerResult = new HashMap<>();
+
+    // String priorUserId = null;
+    // while (resultSet.next()) {
+    // String userId = resultSet.getString("USER_ID");
+    // String questionId = resultSet.getString("QUESTION_ID");
+    // String answerId = resultSet.getString("ANSWER_ID");
+    // if (!userId.equals(priorUserId)) {
+
+    // usersWithSurveyRow.put("user_id", userId);
+
+    // }
+    // priorUserId = userId;
+    // answerResult.put(questionId, answerId);
+    // usersWithSurveyRow.put("answerResult", answerResult);
+    // }
+    // return answer;
+    // }
 
 }
