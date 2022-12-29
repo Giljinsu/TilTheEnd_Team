@@ -19,7 +19,7 @@ public class SurveyPageDB {
         while (resultSet.next()) {
             HashMap<String, Object> answer = new HashMap<String, Object>();
             answer.put("QUESTION_ID", resultSet.getString("QUESTION_ID"));
-            answer.put("ORDERS", resultSet.getString("ORDERS"));
+            answer.put("ORDERS", resultSet.getInt("ORDERS"));
             answer.put("ANSWER", resultSet.getString("ANSWER"));
             answerList.add(answer);
         }
@@ -36,7 +36,7 @@ public class SurveyPageDB {
             result = new HashMap<>();
             result.put("QUESTION_ID", resultSet.getString("QUESTION_ID"));
             result.put("ORDERS", resultSet.getString("ORDERS"));
-            result.put("ANSWER", resultSet.getInt("ANSWER"));
+            result.put("QUESTION", resultSet.getString("QUESTION"));
         }
         return result;
     }

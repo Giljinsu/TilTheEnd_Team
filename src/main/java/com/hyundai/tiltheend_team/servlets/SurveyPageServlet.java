@@ -44,8 +44,7 @@ public class SurveyPageServlet extends HttpServlet {
         }
 
         request.setAttribute("question", question);
-        request.setAttribute("question", question);
-        request.setAttribute("question", question);
+        request.setAttribute("answer", answer);
 
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("surveyPage.jsp");
         requestDispatcher.forward(request, response);
