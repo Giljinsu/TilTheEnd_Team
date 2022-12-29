@@ -39,7 +39,7 @@
     %>
         <div class="container">
       <div class="fs-3 text-center mt-3 mb-4">회원가입</div>
-      <form action="/joinMemberServlet" onsubmit="return validateForm()" name="joinForm" method="get">
+      <form action="/joinMemberServlet" onsubmit="return validateForm()" name="joinForm" method="post">
         <table class="table">
           <tr>
             <th>이름</th>
@@ -71,7 +71,7 @@
               <div class="col-2">
                 <select
                   class="form-select text-center"
-                  name="identification number"
+                  name="identification_number"
                 >
                   <option value="010">010</option>
                   <option value="011">011</option>
