@@ -58,8 +58,9 @@ public class JoinMemberServlet extends HttpServlet {
             System.out.println(name);
     
             joinMember.insertUser(name, age, sex, identification_number, number, email, ID, PW);
-            requestDispatcher = request.getRequestDispatcher("/index.html");
-            requestDispatcher.forward(request, response);
+            // requestDispatcher = request.getRequestDispatcher("/index.html");
+            // requestDispatcher.forward(request, response);
+            response.sendRedirect("/index.html");
             idnotDup = false;
         } else {
             if(isFinish!=null){
