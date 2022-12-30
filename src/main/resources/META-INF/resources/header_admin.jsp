@@ -26,7 +26,7 @@
           </a>
           <div class="collapse navbar-collapse d-flex-md justify-content-between" id="collapseId">
             <div class="navbar-nav">
-              <a href="/member_list.jsp" class="nav-link">회원 관리</a>
+              <a href="/memberListServlet" class="nav-link">회원 관리</a>
               <div class="dropdown">
                 <a href="" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">설문 확인/삭제</a>
                 <div class="dropdown-menu">
@@ -38,7 +38,7 @@
               </div>
             </div>
             <div class="navbar-nav">
-              <a href="/index.html" class="nav-link">로그아웃</a>
+              <a href="/login/logPageServlet" class="nav-link">로그아웃</a>
             </div>
           </div>
         </div>

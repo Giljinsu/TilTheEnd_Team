@@ -1,4 +1,5 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %> <%@ page import="java.util.HashMap,java.util.ArrayList" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %> 
+<%@ page import="java.util.HashMap,java.util.ArrayList" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
