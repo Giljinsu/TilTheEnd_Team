@@ -8,6 +8,7 @@ import java.util.HashMap;
 
 public class SurveyResultDB {
     // 전체통계
+    // questionUid와 answersUid를 주면 그 질문에 그 대답을 한 사람의 숫자를 모두다 세주는 펑션
     public String getCount(String questionsUid, String answersUid) throws SQLException {
         Common common = new Common();
         Statement statement = common.getStatement();
@@ -20,11 +21,11 @@ public class SurveyResultDB {
         String count = null;
         while (resultSet.next()) {
             count = resultSet.getString("COUNT");
-            // System.out.println(count);
         }
         return count;
     }
 
+    // 전체통계를 출력하기 위해서 필요한 모든 정보를 통합해서 돌려주는 펑션
     public ArrayList getEntireCount() throws SQLException {
         ArrayList<String> questionsUidList = getQuestionsUidList();
         ArrayList entireStat = new ArrayList<>();
@@ -33,14 +34,12 @@ public class SurveyResultDB {
             ArrayList<String> answersUidList = getAnswersUidList(questionUid);
             ArrayList<String> answers = new ArrayList<>();
 
-            // System.out.println("questionUid: " + questionUid);
             statRow.put("questionUid", questionUid);
             statRow.put("question", getQuestion(questionUid));
 
             ArrayList answersCount = new ArrayList<>();
             for (String answerUid : answersUidList) {
                 String count = getCount(questionUid, answerUid);
-                // System.out.println("getCount:" + count);
                 answersCount.add(count);
                 String answer = null;
                 answer = getAnswer(answerUid);
@@ -53,6 +52,7 @@ public class SurveyResultDB {
         return entireStat;
     }
 
+    // questionUid를 리스트로 돌려줌
     public ArrayList<String> getQuestionsUidList() throws SQLException {
         Common common = new Common();
         Statement statement = common.getStatement();
@@ -66,6 +66,7 @@ public class SurveyResultDB {
         return questionUids;
     }
 
+    // answerId를 리스트로 돌려줌
     public ArrayList getAnswersUidList(String questionUid) throws SQLException {
         Common common = new Common();
         Statement statement = common.getStatement();
@@ -79,6 +80,7 @@ public class SurveyResultDB {
         return answerUids;
     }
 
+    // questionUid주면 question 문자열을 돌려줌
     public String getQuestion(String questionUid) throws SQLException {
         Common common = new Common();
         Statement statement = common.getStatement();
@@ -91,6 +93,7 @@ public class SurveyResultDB {
         return question;
     }
 
+    // answerId 주면 답항 문자열을 돌려줌
     public String getAnswer(String answerUid) throws SQLException {
         Common common = new Common();
         Statement statement = common.getStatement();
@@ -103,6 +106,8 @@ public class SurveyResultDB {
         return answer;
     }
 
+    // survey를 한 user 리스트를 불러오는 펑션. user에 대한 필요한 모든 정보를 다 담아 온다.
+    // 회원별 통계를 출력하기 위해서 만든 펑션. 각 줄마다 필요한 정보를 모두다 담아서 보내온다.
     public ArrayList getUsersListWithSurvey() throws SQLException {
         Common common = new Common();
         Statement statement = common.getStatement();
@@ -113,12 +118,12 @@ public class SurveyResultDB {
             HashMap row = new HashMap<>();
             String userId = resultSet.getString("USER_ID");
             String userName = resultSet.getString("USER_NAME");
-            if (hasSurvey(userId)) {// 만약에 survey를 한 유저라면
-                row.put("userId", userId);
-                row.put("userName", userName);
-                ArrayList answerList = getSurveyById(userId);
-                row.put("answerList", answerList);
-                usersListWithSurvey.add(row);
+            if (hasSurvey(userId)) {// 만약에 survey를 한 유저라면 리스트에 포함시켜라.
+                row.put("userId", userId); // userId담고
+                row.put("userName", userName); // 이름도 담고
+                ArrayList answerList = getSurveyById(userId); // 이 user가 답변한 내용 알아내와라.
+                row.put("answerList", answerList); // user가 답변한 내용도 담고
+                usersListWithSurvey.add(row); // 이 user에 대한 필요한 정보를 모두다 담아서 리스트에 담자.
             }
         }
         return usersListWithSurvey;

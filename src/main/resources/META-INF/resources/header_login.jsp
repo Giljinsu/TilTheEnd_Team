@@ -28,10 +28,11 @@
             <div class="navbar-nav">
               <a href="/surveyPageServlet" class="nav-link">설문지 작성</a>
               <div class="dropdown">
-                <a href="" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">통계</a>
+                <a href="" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">설문 확인/삭제</a>
                 <div class="dropdown-menu">
                   <a href="/surveyResultServlet" class="dropdown-item">전체 통계</a>
                   <a href="/clientResultServlet" class="dropdown-item">회원별 통계</a>
+                  <a href="/removeSurveyPageServlet" class="dropdown-item">통계 확인</a>
                   <a href="/removeSurveyPageServlet" class="dropdown-item">통계 삭제</a>
                 </div>
               </div>
