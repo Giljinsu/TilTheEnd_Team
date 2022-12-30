@@ -15,42 +15,53 @@ import jakarta.servlet.http.HttpSession;
 @WebServlet(urlPatterns = "/login/logPageServlet")
 public class LogPageServlet extends HttpServlet {
     int result = 0;
+    HttpSession httpSessionID_Compare= null; // 세션을 비교하기 위함
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8"); // 한글세팅
-    //     HttpSession httpSession = null; // 세션들 불러옴
-    //     LoginDao loginDao = new LoginDao();
-    //     String userId = "";
-    //     String userPassword = "";
+        HttpSession httpSession = null; // 세션들 불러옴
+        LoginDao loginDao = new LoginDao();
+        String userId = "";
+        String userPassword = "";
 
-    //     if(request.getParameter("userId")!=""&&request.getParameter("userPassword")!=""){
-    //     userId = request.getParameter("userId");
-    //     userPassword = request.getParameter("userPassword");
-    //     result = loginDao.login(userId, userPassword);
-    // }
+        if(request.getParameter("userId")!=null&&request.getParameter("userPassword")!=null) {
+            if(request.getParameter("userId")!=""&&request.getParameter("userPassword")!=""){
+            userId = request.getParameter("userId");
+            userPassword = request.getParameter("userPassword");
+            result = loginDao.login(userId, userPassword);
+        }
+        }
         
-    //     String path = null;
-    //     if(result == 1) {
-    //         //로그인 성공
-    //         httpSession = request.getSession(false); // 존재하면 인스턴스화
-    //         if(httpSession == null) {
-    //             httpSession = request.getSession(); // 생성
-    //             httpSession.setAttribute("userId", userId);
-    //             httpSession.setAttribute("userPassword", userPassword);
-    //             path = "/logpage.jsp";
-    //         }
-    //         result =0;
+        String path = null;
+        if(result == 1) {
+            //로그인 성공
+            httpSession = request.getSession(false); // 존재하면 인스턴스화r
+            if(httpSession == null) {
+                httpSession = request.getSession(); // 생성
+                httpSession.setAttribute("userId", userId);
+                httpSession.setAttribute("userPassword", userPassword);
+            } else if(httpSession != httpSessionID_Compare) {
+                httpSession =request.getSession(); //생성
+                httpSession.setAttribute("userId", userId); // httpSession에 저장
+                httpSession.setAttribute("userPassword", userPassword);
+            
+            }
+            path = "/indexLogined.jsp";
+            result =0;
 
-    //     } else {
-    //         //로그인 실패
-    //         httpSession = request.getSession(false); // 존재하면 인스턴스화
-    //         if(httpSession != null) {
-    //             httpSession.invalidate();// 만료
-    //         }
-    //         path = "/logpage.jsp";
-    //     }
-        String path = "/logpage.jsp";
+        } else {
+            //로그인 실패
+            httpSession = request.getSession(false); // 존재하면 인스턴스화
+            if(httpSession != null) {
+                httpSession.invalidate();// 없애는게 아니라 만료시킴
+            }
+            request.setAttribute("result", "아이디(로그인 전용 아이디) 또는 비밀번호를 잘못 입력했습니다."+
+            "입력하신 내용을 다시 확인해주세요. ");
+            path = "/logpage.jsp";
+        }
+        // String path = "/logpage.jsp";
+        httpSessionID_Compare = httpSession;// 세션 전값을 저장
         RequestDispatcher requestDispatcher = request.getRequestDispatcher(path);
         requestDispatcher.forward(request, response);
     }
