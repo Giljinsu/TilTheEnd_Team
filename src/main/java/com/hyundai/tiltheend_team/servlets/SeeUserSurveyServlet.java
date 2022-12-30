@@ -28,12 +28,12 @@ public class SeeUserSurveyServlet extends HttpServlet {
         SurveyResultDB surveyResultDB = new SurveyResultDB();
         ArrayList entireStat = new ArrayList<>();
 
-        String userId = "UID01";
+        String userId = "jinsu01";
         // 이 user가 설문을 작성했는지 부터 파악하기
 
-        HttpSession httpSession = null;
-        httpSession = request.getSession(false); // 존재하면 인스턴스화r
-        userId = (String) httpSession.getAttribute("userId");
+        // HttpSession httpSession = null;
+        // httpSession = request.getSession(false); // 존재하면 인스턴스화r
+        // userId = (String) httpSession.getAttribute("userId");
 
         try {
             if (surveyResultDB.hasSurvey(userId)) { // user가 설문을 작성했다면. 설문내용을 보여주는 페이지로 이동하기
