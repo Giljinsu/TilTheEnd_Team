@@ -18,7 +18,7 @@
     <header class="bg border-bottom">
       <nav class="navbar navbar-expand-sm fw-bold">
         <div class="container">
-          <a href="./index.html" class="navbar-brand">
+          <a href="/indexLogined.jsp" class="navbar-brand">
             <img src="https://www.hyundai.com/static/images/hyu_logo_og_image.jpg" width="150" class="" alt="" />
           </a>
           <a href="#collapseId" class="navbar-toggler" data-bs-toggle="collapse">
@@ -38,7 +38,7 @@
               </div>
             </div>
             <div class="navbar-nav">
-              <a href="/index.html" class="nav-link">로그아웃</a>
+              <a href="/login/logPageServlet" class="nav-link">로그아웃</a>
             </div>
           </div>
         </div>

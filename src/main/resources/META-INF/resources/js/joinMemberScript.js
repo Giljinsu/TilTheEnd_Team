@@ -14,7 +14,7 @@ function validateForm(test) {
     let emailValue = document.querySelector("#email").value;
     
     if(nameValue == "") {
-        let idError = document.querySelector("#nameError");
+        let nameError = document.querySelector("#nameError");
         nameError.innerHTML="이름을 입력해주세요";
         nameError.style.color = "red";
         return false;
@@ -22,21 +22,21 @@ function validateForm(test) {
     nameError.innerHTML="";
 
     if(ageValue == "") {
-        let idError = document.querySelector("#ageError");
+        let ageError = document.querySelector("#ageError");
         ageError.innerHTML="나이를 입력해주세요";
         ageError.style.color = "red";
         return false;
     }
     ageError.innerHTML="";
     if(numberValue == "") {
-        let idError = document.querySelector("#numberError");
+        let numberError = document.querySelector("#numberError");
         numberError.innerHTML="번호를 입력해주세요";
         numberError.style.color = "red";
         return false;
     }
     numberError.innerHTML="";
     if(emailValue == "") {
-        let idError = document.querySelector("#emailError");
+        let emailError = document.querySelector("#emailError");
         emailError.innerHTML="이메일을 입력해주세요";
         emailError.style.color = "red";
         return false;
