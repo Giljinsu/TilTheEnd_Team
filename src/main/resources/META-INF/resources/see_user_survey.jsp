@@ -13,7 +13,7 @@
 			rel="stylesheet"
 			integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
 			crossorigin="anonymous" />
-		<!-- <link rel="stylesheet" href="./css/common.css" /> -->
+		<%-- <link rel="stylesheet" href="./css/common.css" /> --%>
 		<link
 			rel="stylesheet"
 			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -23,7 +23,35 @@
 		<%@ include file="header_login.jsp" %>
 
 		<main class="d-flex align-items-center" style="height: 40rem">
-			<div class="container"></div>
+			<div class="container">
+				<div>
+					<table class="table table-striped">
+						<thead>
+						<tr class="bg-warning">
+							<th colspan="2" class="text-center">설문확인</th>
+						</tr>
+						</thead>
+						<tbody>
+						<%
+							ArrayList entireStat = new ArrayList<>();
+							ArrayList userAnswerList = new ArrayList<>();
+							entireStat = (ArrayList) request.getAttribute("entireStat");  // 전체통계 페이지에서 썼던 함수및 화면 재활용하기. 질문리스트를 뽑기 위해서.
+							userAnswerList = (ArrayList) request.getAttribute("userAnswerList"); //user가 답변한 내용 불러오기
+							for(int i = 0;i<entireStat.size();i++) {
+								HashMap statRow = (HashMap) entireStat.get(i);
+								String question = (String) statRow.get("question");
+						%>
+							<tr>
+								<td colspan="" class="text-left"><%=question    %></td>
+								<td><%=userAnswerList.get(i)%></td>
+							</tr>
+						<%    
+							}
+						%>
+						</tbody>
+					</table>
+				</div>
+			</div>
 		</main>
 		
 		<%@ include file="footer.jsp" %>

@@ -157,7 +157,7 @@ public class SurveyResultDB {
         ResultSet resultSet = statement.executeQuery(query);
         ArrayList answerList = new ArrayList();
         while (resultSet.next()) {
-            String questionId = resultSet.getString("QUESTION_ID");
+            // String questionId = resultSet.getString("QUESTION_ID");
             String answerId = resultSet.getString("ANSWER_ID");
             String answerStr = getAnswer(answerId);
             answerList.add(answerStr);
