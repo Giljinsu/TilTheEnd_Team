@@ -19,7 +19,7 @@
       <div class="container">
         <div class="row">
           <div class="col-12 col-md-2">
-            <img src="./images/현대차량로고.png" width="50" alt="" />
+            <img src="/images/현대차량로고.png" width="50" alt="" />
           </div>
           <div class="col-12 col-md-8">
             <div>

@@ -22,7 +22,7 @@
 
 		<main class="" style="background-color: rgba(248, 243, 242)">
 			<div class="container">
-				<img src="./images/현대자동차.PNG" width="100%" alt="" />
+				<img src="/images/현대자동차.PNG" width="100%" alt="" />
 			</div>
 		</main>
 
