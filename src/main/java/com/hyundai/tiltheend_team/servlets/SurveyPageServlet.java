@@ -13,13 +13,15 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 @WebServlet(urlPatterns = "/surveyPageServlet")
 public class SurveyPageServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+                
+        HttpSession httpSession = request.getSession();
         SurveyPageDB surveyPageDB = new SurveyPageDB();
         ArrayList<HashMap> answer = null;
         ArrayList<HashMap> question = null;

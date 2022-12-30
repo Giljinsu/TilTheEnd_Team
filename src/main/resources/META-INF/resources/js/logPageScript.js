@@ -1,3 +1,4 @@
+// 작동 안됨
 function validateForm() {
     let idValue = document.querySelector("#id").value;
     let pwValue = document.querySelector("#password").value;
