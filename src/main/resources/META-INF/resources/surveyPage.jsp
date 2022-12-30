@@ -24,7 +24,7 @@
 
     <main class="d-flex align-items-center mt-5" style="height: 40rem">
       <div class="container">
-        <form action="./index.html">
+        <form action="./insertSurvey.html">
           <div class="mb-3">
             <% for(int i=0;i<question.size();i++){ 
               HashMap<String, Object> questions_list = question.get(i);%>

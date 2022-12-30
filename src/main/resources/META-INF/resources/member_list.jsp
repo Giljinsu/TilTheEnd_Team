@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="./css/commons.css" />
   </head>
   <body>
-    <%@ include file="header_login.jsp" %>
+    <%@ include file="header_admin.jsp" %>
     <main class="d-flex align-items-center mt-5" style="height: 40rem">
       <div class="container">
         <div class="mb-3">
