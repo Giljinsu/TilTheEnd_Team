@@ -14,7 +14,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 // 설문확인 페이지
-@WebServlet(urlPatterns = "/seeUserSurveyServlet")
+@WebServlet(urlPatterns = "/menu/seeUserSurveyServlet")
 public class SeeUserSurveyServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -39,7 +39,7 @@ public class SeeUserSurveyServlet extends HttpServlet {
                 request.setAttribute("userId", userId); // userId 넘기기
                 request.setAttribute("userAnswerList", userAnswerList); // userId 넘기기
                 // 설문내용 페이지로 이동하기
-                String path = "./see_user_survey.jsp";
+                String path = "/see_user_survey.jsp";
                 RequestDispatcher requestDispatcher = request.getRequestDispatcher(path);
                 requestDispatcher.forward(request, response);
             } else { // survey가 없으면

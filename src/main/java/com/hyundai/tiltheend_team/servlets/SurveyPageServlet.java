@@ -15,17 +15,16 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-@WebServlet(urlPatterns = "/surveyPageServlet")
+@WebServlet(urlPatterns = "/menu/surveyPageServlet")
 public class SurveyPageServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-                
         HttpSession httpSession = request.getSession();
+                
         SurveyPageDB surveyPageDB = new SurveyPageDB();
         ArrayList<HashMap> answer = null;
         ArrayList<HashMap> question = null;
-
         try {
             question = surveyPageDB.getQuestion();
             answer = surveyPageDB.getAnswersList();
@@ -45,7 +44,7 @@ public class SurveyPageServlet extends HttpServlet {
         request.setAttribute("question", question);
         request.setAttribute("answer", answer);
 
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("surveyPage.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/surveyPage.jsp");
         requestDispatcher.forward(request, response);
     }
 }

@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = "/clientResultServlet")
+@WebServlet(urlPatterns = "/menu/clientResultServlet")
 public class ClientResultServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -31,7 +31,7 @@ public class ClientResultServlet extends HttpServlet {
 
         request.setAttribute("usersListWithSurvey", usersListWithSurvey);
 
-        String path = "./client_result.jsp";
+        String path = "/client_result.jsp";
         RequestDispatcher requestDispatcher = request.getRequestDispatcher(path);
         requestDispatcher.forward(request, response);
     }
