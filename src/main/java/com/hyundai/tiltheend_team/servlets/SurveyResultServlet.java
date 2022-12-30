@@ -14,7 +14,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 // 용범: 전체통계
-@WebServlet(urlPatterns = "/surveyResultServlet")
+@WebServlet(urlPatterns = "/menu/surveyResultServlet")
 public class SurveyResultServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -30,7 +30,7 @@ public class SurveyResultServlet extends HttpServlet {
         }
 
         request.setAttribute("entireStat", entireStat);
-        String path = "./survey_result.jsp";
+        String path = "/survey_result.jsp";
         RequestDispatcher requestDispatcher = request.getRequestDispatcher(path);
         requestDispatcher.forward(request, response);
     }
