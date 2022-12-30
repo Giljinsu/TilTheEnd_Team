@@ -23,12 +23,16 @@
 		<%@ include file="header_login.jsp" %>
 
 		<main class="d-flex align-items-center" style="height: 40rem">
-			<div class="container">
-				<div>
+			<div class="container d-flex justify-content-center">
+				<div class="col-8">
 					<table class="table table-striped">
 						<thead>
 						<tr class="bg-warning">
 							<th colspan="2" class="text-center">설문확인</th>
+						</tr>
+						<tr class="bg-warning bg-opacity-25">
+							<% String userName = (String) request.getAttribute("userName"); %>
+							<th colspan="2" class="text-center"><%=userName%>님은 설문에 다음과 같이 답하셨습니다.</th>
 						</tr>
 						</thead>
 						<tbody>
@@ -42,8 +46,8 @@
 								String question = (String) statRow.get("question");
 						%>
 							<tr>
-								<td colspan="" class="text-left"><%=question    %></td>
-								<td><%=userAnswerList.get(i)%></td>
+								<td colspan="" class="text-center"><%=question%></td>
+								<td class="text-center"><%=userAnswerList.get(i)%></td>
 							</tr>
 						<%    
 							}

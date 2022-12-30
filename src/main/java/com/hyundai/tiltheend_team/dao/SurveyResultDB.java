@@ -164,4 +164,17 @@ public class SurveyResultDB {
         }
         return answerList;
     }
+
+    // userId주면 user의 이름을 알아오는 펑션
+    public String getUserName(String userId) throws SQLException {
+        Common common = new Common();
+        Statement statement = common.getStatement();
+        String query = "SELECT * FROM USERS WHERE USER_ID='" + userId + "'";
+        ResultSet resultSet = statement.executeQuery(query);
+        String userName = null;
+        while (resultSet.next()) {
+            userName = resultSet.getString("USER_NAME");
+        }
+        return userName;
+    }
 }

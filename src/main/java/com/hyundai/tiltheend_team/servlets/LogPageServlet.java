@@ -24,9 +24,10 @@ public class LogPageServlet extends HttpServlet {
         LoginDao loginDao = new LoginDao();
         String userId = "";
         String userPassword = "";
-        if(request.getParameter("result")!=null) {
-            result = Integer.parseInt(request.getParameter("result"));
-        }
+        // if(request.getParameter("result")!=null) {
+        //     result = Integer.parseInt(request.getParameter("result"));
+        // }
+        result = 2;
 
         if(request.getParameter("userId")!=null&&request.getParameter("userPassword")!=null) {
             if(request.getParameter("userId")!=""&&request.getParameter("userPassword")!=""){
@@ -48,7 +49,6 @@ public class LogPageServlet extends HttpServlet {
                 httpSession =request.getSession(); //생성
                 httpSession.setAttribute("userId", userId); // httpSession에 저장
                 httpSession.setAttribute("userPassword", userPassword);
-            
             }
             path = "/indexLogined.jsp";
             result =0;

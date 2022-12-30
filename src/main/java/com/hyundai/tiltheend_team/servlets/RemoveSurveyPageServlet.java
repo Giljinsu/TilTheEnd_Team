@@ -9,14 +9,14 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = "/removeSurveyPageServlet")
+@WebServlet(urlPatterns = "/menu/removeSurveyPageServlet")
 public class RemoveSurveyPageServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8"); // 한글세팅
 
-        String path = "./removeSurveyPage.jsp";
+        String path = "/removeSurveyPage.jsp";
         RequestDispatcher requestDispatcher = request.getRequestDispatcher(path);
         requestDispatcher.forward(request, response);
     }
