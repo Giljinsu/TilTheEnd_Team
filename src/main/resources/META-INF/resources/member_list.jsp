@@ -28,7 +28,7 @@
                 <li class="item">
                   <span class="ps-1"><%= member_list.get("USER_NAME") %></span>
                   <span class="pe-1">
-                    <a href="/memberListServlet?username=<%= member_list.get('USER_NAME') %>" style="color: black; text-decoration: none;">info</a>
+                    <a href="/memberInfoServlet?username=<%= member_list.get('USER_NAME') %>" style="color: black; text-decoration: none;">info</a>
                   </span>
                 </li>
               </ul>
