@@ -26,8 +26,8 @@
 				String userName = (String) request.getAttribute("userName");
 			%>
 			<script>
-				alert("<%=userName%>님은 설문작성을 아직 하지 않으셨습니다.");
-				window.location.href = '/indexLogined.jsp';
+				alert("<%=userName%>님은 설문작성을 아직 하지 않으셨습니다."); // alert창을 띄워서 설문작성 안했다고 알려줌.
+				window.location.href = '/indexLogined.jsp'; // alert창을 클릭하면 메인화면으로 이동
 			</script>
 				<div>
 
