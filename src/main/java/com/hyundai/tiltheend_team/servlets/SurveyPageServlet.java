@@ -21,7 +21,9 @@ public class SurveyPageServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession httpSession = request.getSession();
-                
+
+        String ID = (String) httpSession.getAttribute("USER_ID"); // <-세션에서 아이디 불러오기
+
         SurveyPageDB surveyPageDB = new SurveyPageDB();
         ArrayList<HashMap> answer = null;
         ArrayList<HashMap> question = null;
