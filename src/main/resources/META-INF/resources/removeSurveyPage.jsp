@@ -43,7 +43,9 @@
                 </div>
               </div>
             </div>
-            <%if(result!=null) {%>
+            <%if(result==null) {%>
+            <div class="text-center" style="color:red;" id="pwError"></div>
+            <%} else {%>
             <div class="text-center" style="color:red;" id="pwError"><%=result%></div>
             <%}%>
           </div>
