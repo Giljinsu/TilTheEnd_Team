@@ -197,7 +197,7 @@ public class SurveyResultDB {
             String userAge = resultSet.getString("AGE");
             row.put("userId", userId);
             row.put("userPw", userPw);
-            row.put("userPriviliges", userPrivileges);
+            row.put("userPrivileges", userPrivileges);
             row.put("userName", userName);
             row.put("userSex", userSex);
             row.put("userPhoneNum", userPhoneNum);
