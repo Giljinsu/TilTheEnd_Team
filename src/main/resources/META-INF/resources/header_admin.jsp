@@ -26,15 +26,19 @@
           </a>
           <div class="collapse navbar-collapse d-flex-md justify-content-between" id="collapseId">
             <div class="navbar-nav">
-              <a href="/memberListServlet" class="nav-link">회원 관리</a>
               <div class="dropdown">
-                <a href="" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">설문 확인/삭제</a>
+                <a href="" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">회원관리</a>
+                <div class="dropdown-menu">
+                  <a href="/menu/seeMemberList" class="dropdown-item">회원리스트</a>
+                </div>
+              </div>
+              <div class="dropdown">
+                <a href="" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">통계</a>
                 <div class="dropdown-menu">
                   <a href="/menu/surveyResultServlet" class="dropdown-item">전체 통계</a>
                   <a href="/menu/clientResultServlet" class="dropdown-item">회원별 통계</a>
-                  <a href="/menu/seeUserSurveyServlet" class="dropdown-item">설문 확인</a>
-                  <a href="/removeSurveyPageServlet" class="dropdown-item">설문 삭제</a>
-                  <a href="/menu/seeMemberList" class="dropdown-item">회원리스트</a>
+                  <%-- <a href="/menu/seeUserSurveyServlet" class="dropdown-item">설문 확인</a> --%>
+                  <%-- <a href="/removeSurveyPageServlet" class="dropdown-item">설문 삭제</a> --%>
                 </div>
               </div>
             </div>
