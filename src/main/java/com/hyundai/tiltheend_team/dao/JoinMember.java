@@ -30,7 +30,7 @@ public class JoinMember {
         Common common = new Common();
         String compareId = null;
         Statement statement  = common.getStatement();
-        String query = "SELECT USER_ID FROM users WHERE USER_ID = '"+id+"';";
+        String query = "SELECT USER_ID FROM USERS WHERE USER_ID = '"+id+"';";
         try {
             ResultSet resultSet = statement.executeQuery(query);
             while(resultSet.next()) {
