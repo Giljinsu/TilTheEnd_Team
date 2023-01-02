@@ -8,7 +8,7 @@ public class RemoveSurveyDao {
     public Boolean removeSurvey(String userId, String password) {
         Common common = new Common();
         Statement statement = common.getStatement();
-        String query = "SELECT USER_PW FROM users WHERE USER_ID = '"+userId+"'";
+        String query = "SELECT USER_PW FROM USERS WHERE USER_ID = '"+userId+"'";
         String dbPW = "";
         try {
             ResultSet resultSet = statement.executeQuery(query);
@@ -16,7 +16,7 @@ public class RemoveSurveyDao {
                 dbPW = resultSet.getString("USER_PW");
             }
             if(password.equals(dbPW)) {
-                query = "DELETE FROM users_answer WHERE USER_ID = '"+userId+"'";
+                query = "DELETE FROM USERS_ANSWER WHERE USER_ID = '"+userId+"'";
                 statement.execute(query);
                 return true;
             }else {
