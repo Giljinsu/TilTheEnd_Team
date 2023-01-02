@@ -130,7 +130,7 @@
           </tr>
         </table>
         <div class="text-center mb-3">
-          <a href="./logpage.html" class="btn btn-warning">뒤로가기</a>
+          <a href="/login/logPageServlet" class="btn btn-warning">뒤로가기</a>
           <button name="isFinish" onclick="validateForm(false)" value="fin" class="btn btn-warning">
             회원가입
           </button>
