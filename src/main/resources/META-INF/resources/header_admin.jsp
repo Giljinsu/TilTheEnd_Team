@@ -34,6 +34,7 @@
                   <a href="/clientResultServlet" class="dropdown-item">회원별 통계</a>
                   <a href="/removeSurveyPageServlet" class="dropdown-item">설문 확인</a>
                   <a href="/removeSurveyPageServlet" class="dropdown-item">설문 삭제</a>
+                  <a href="/seeMemberList" class="dropdown-item">회원리스트</a>
                 </div>
               </div>
             </div>
