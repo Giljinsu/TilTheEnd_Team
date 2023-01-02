@@ -29,7 +29,7 @@ public class CommonFilter implements Filter{
         HttpSession httpSession = httpServletRequest.getSession();
         String userId = (String)httpSession.getAttribute("userId");
         if(userId == null) {
-            httpServletResponse.sendRedirect("/login/logPageServlet");
+            httpServletResponse.sendRedirect("/logpage.jsp");
         } else{
             chain.doFilter(request, response);
 

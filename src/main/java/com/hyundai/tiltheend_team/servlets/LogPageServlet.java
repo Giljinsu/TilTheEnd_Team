@@ -24,10 +24,7 @@ public class LogPageServlet extends HttpServlet {
         LoginDao loginDao = new LoginDao();
         String userId = "";
         String userPassword = "";
-        // if(request.getParameter("result")!=null) {
-        //     result = Integer.parseInt(request.getParameter("result"));
-        // }
-        result = 2;
+        result = 0;
 
         if(request.getParameter("userId")!=null&&request.getParameter("userPassword")!=null) {
             if(request.getParameter("userId")!=""&&request.getParameter("userPassword")!=""){
@@ -64,10 +61,8 @@ public class LogPageServlet extends HttpServlet {
             //     httpSession.invalidate();// 없애는게 아니라 만료시킴
             // } 
             // 위의 세션 만료부분은 필터에서 처리함
-            if(result != 2) { // 로그아웃 누를시 바로나오는것을 방지
                 request.setAttribute("result", "아이디(로그인 전용 아이디) 또는 비밀번호를 잘못 입력했습니다."+
                 "입력하신 내용을 다시 확인해주세요. ");
-            }
             path = "/logpage.jsp";
         }
 

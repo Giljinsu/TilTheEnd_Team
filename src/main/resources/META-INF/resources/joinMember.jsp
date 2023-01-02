@@ -60,8 +60,13 @@
             <th>성별</th>
             <td>
               <select name="sex" id="" class="form-select w-25 text-center">
+              <%if(sex.equals("Woman")) {%>
+                <option value="Man">남성</option>
+                <option value="Woman" selected>여성</option>
+                <%} else {%>
                 <option value="Man">남성</option>
                 <option value="Woman">여성</option>
+                <%}%>
               </select>
             </td>
           </tr>
@@ -108,17 +113,10 @@
                 </div>
                 <% // id 중복
                 String isDup = (String)request.getAttribute("isDup");
-                if(isDup!=null) {
-                if(isDup.equals("중복된 ID 입니다")) { %>
-               <div style="color:red;">
-                <%=isDup%>
-               </div>
-               <% } else { %>
-                <div style="color:red;">
-                <%=isDup%>
-               </div>
-              <% } } %>
-              <div id="idError"></div>
+                if(isDup!=null) {%>
+              <div id="idError" style="color:red;"><%=isDup%> </div>
+               
+              <%  } %>
             </td>
           </tr>
           <tr>
@@ -148,3 +146,15 @@
     ></script>
   </body>
 </html>
+<%-- <% // id 중복
+                String isDup = (String)request.getAttribute("isDup");
+                if(isDup!=null) {
+                if(isDup.equals("중복된 ID 입니다")) { %>
+               <div style="color:red;">
+                <%=isDup%>
+               </div>
+               <% } else { %>
+                <div style="color:red;">
+                <%=isDup%>
+               </div>
+              <% } } %> --%>

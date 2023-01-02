@@ -2,8 +2,6 @@ package com.hyundai.tiltheend_team.servlets;
 
 import java.io.IOException;
 
-import com.hyundai.tiltheend_team.dao.LoginDao;
-
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

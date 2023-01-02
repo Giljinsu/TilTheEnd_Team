@@ -1,7 +1,6 @@
 package com.hyundai.tiltheend_team.servlets;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import com.hyundai.tiltheend_team.dao.JoinMember;
 

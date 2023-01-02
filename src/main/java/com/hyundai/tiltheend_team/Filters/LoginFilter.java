@@ -17,7 +17,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 
-@WebFilter("/login/*") //모든것을 다 검열하겠다.
+@WebFilter("/login/*") 
 public class LoginFilter implements Filter{
     @Override
     public void destroy() {
@@ -37,8 +37,11 @@ public class LoginFilter implements Filter{
                 if(httpSession != null) {
                     httpSession.invalidate();// 없애는게 아니라 만료시킴
             }
+            httpServletResponse.sendRedirect("/logpage.jsp");
+        } else {
+            chain.doFilter(request, response);
         }
-        chain.doFilter(request, response);
+        
     }
 
     @Override
