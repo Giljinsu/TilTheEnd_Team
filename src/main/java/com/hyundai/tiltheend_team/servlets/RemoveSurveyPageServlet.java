@@ -2,6 +2,8 @@ package com.hyundai.tiltheend_team.servlets;
 
 import java.io.IOException;
 
+import com.hyundai.tiltheend_team.dao.RemoveSurveyDao;
+
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -17,9 +19,31 @@ public class RemoveSurveyPageServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8"); // 한글세팅
         HttpSession httpSession = request.getSession();
-        
-        String path = "/removeSurveyPage.jsp";
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher(path);
-        requestDispatcher.forward(request, response);
+        RemoveSurveyDao removeSurveyDao = new RemoveSurveyDao();
+        String userId = (String)httpSession.getAttribute("userId");
+        String password = "";
+        String path = "";
+        boolean isRemoved = false;
+        if(request.getParameter("password")!=null) {
+            password = request.getParameter("password");
+            isRemoved = removeSurveyDao.removeSurvey(userId,password);
+
+        }
+            if(isRemoved) {
+                //삭제 완료시
+                System.out.println("삭제");
+                response.sendRedirect("/indexLogined.jsp");
+            } else {
+                path = "/removeSurveyPage.jsp";
+                if(password != "") {
+                    request.setAttribute("result", "틀린 비밀번호입니다.");
+                }
+                RequestDispatcher requestDispatcher = request.getRequestDispatcher(path);
+                requestDispatcher.forward(request, response);
+            }
+    }
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        this.doGet(req, resp);
     }
 }

@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="jakarta.servlet.http.HttpSession" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,6 +16,10 @@
     <link rel="stylesheet" href="./css/commons.css" />
   </head>
   <body>
+  <%
+    HttpSession httpSession = request.getSession();
+    String name = (String)httpSession.getAttribute("userName");
+  %>
     <header class="bg border-bottom">
       <nav class="navbar navbar-expand-sm fw-bold">
         <div class="container">
@@ -35,7 +40,8 @@
                 </div>
               </div>
             </div>
-            <div class="navbar-nav">
+            <div class="navbar-nav d-flex align-items-center">
+              <div class=""><%=name%>님</div>
               <a href="/login/logOutPageServlet" class="nav-link">로그아웃</a>
             </div>
           </div>

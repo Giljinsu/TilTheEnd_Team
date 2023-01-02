@@ -11,7 +11,7 @@ public class LoginDao {
         String idCheck = "";
         String pwCheck = "";
         // SELECT USER_ID, USER_PW FROM users WHERE USER_ID='아이디';
-        String query = "SELECT USER_ID, USER_PW FROM users WHERE USER_ID='"+id+"'";
+        String query = "SELECT USER_ID, USER_PW  FROM users WHERE USER_ID='"+id+"'";
         ResultSet resultSet = null;
         try {
             if(id != "" && pw != "") {
@@ -64,5 +64,23 @@ public class LoginDao {
             }
         }
         return false;
+    }
+
+    public String getName(String id) {
+        Common common = new Common();
+        Statement statement = common.getStatement();
+        String query = "SELECT USER_NAME FROM users WHERE USER_ID='"+id+"'";
+        ResultSet resultSet = null;
+        String name="";
+        try {
+            resultSet = statement.executeQuery(query);
+            while(resultSet.next()) {
+                name = resultSet.getString("USER_NAME");
+            }
+            return name;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return "nameError";
     }
 }
