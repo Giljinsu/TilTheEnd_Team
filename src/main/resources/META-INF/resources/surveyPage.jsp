@@ -25,7 +25,7 @@
 
     <main class="d-flex align-items-center mt-5" style="height: 40rem">
       <div class="container">
-        <form action="./insertSurvey.html">
+        <form action="/menu/insertSurvey">
           <div class="mb-3">
             <% for(int i=0;i<question.size();i++){ 
               HashMap<String, Object> questions_list = question.get(i);%>
@@ -34,7 +34,7 @@
               <div class="col">
                 <% for(int j=0;j<answer.size();j++){ 
                 HashMap<String, Object> answers_list = answer.get(j);%>
-                <input type="radio" class="form-check-input" name="survey_<%= (i+1) %>" id="radio<%= (i+1) %>-<%= (j+1) %>" value="survey<%= (i+1) %>-<%= (j+1) %>" />
+                <input type="radio" class="form-check-input" name="Q<%= (i+1) %>" id="radio<%= (i+1) %>-<%= (j+1) %>" value="E<%= (j+1) %>" />
                 <label for="radio<%= (i+1) %>-<%= (j+1) %>" class="form-check-label"> (<%= (j+1) %>)<%= answers_list.get("ANSWER") %></label>
                 <% } %>
               </div>
