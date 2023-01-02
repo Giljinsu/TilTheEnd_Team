@@ -23,8 +23,8 @@
       String identification_number = request.getParameter("identification_number"); // ex) 010 011
       String number = request.getParameter("number"); // 전화번호 나머지
       String email = request.getParameter("email");
-      String ID = request.getParameter("ID");
-      String PW = request.getParameter("PW");
+      String id = request.getParameter("id");
+      String pw = request.getParameter("pw");
       boolean isFinBtn = true;
       if(name == null) { // 처음값 지우기
         name="";
@@ -33,8 +33,8 @@
         identification_number="";
         number="";
         email="";
-        ID="";
-        PW="";
+        id="";
+        pw="";
       }
     %>
         <div class="container">
@@ -106,7 +106,7 @@
             <th>ID</th>
             <td class="row">
                 <div class="col-8">
-                  <input class="form-control" type="text" name="ID" value="<%=ID%>" id="ID"/>
+                  <input class="form-control" type="text" name="id" value="<%=id%>" id="id"/>
                 </div>
                 <div class="col-4">
                   <button name="isFinish" value="notFin" class="btn btn-outline-primary" onclick="validateForm(true)" type="submit">아이디 중복확인</button>
@@ -122,7 +122,7 @@
           <tr>
             <th>PW</th>
             <td>
-              <input class="form-control" type="password" name="PW" value="<%=PW%>" id="PW"/>
+              <input class="form-control" type="password" name="pw" value="<%=pw%>" id="pw"/>
             <div id="pwError"></div>
             </td>
           </tr>

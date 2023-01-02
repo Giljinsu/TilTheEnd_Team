@@ -18,7 +18,7 @@ public class JoinMemberServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         JoinMember joinMember = new JoinMember();
         String isFinish = request.getParameter("isFinish");
-        String id = request.getParameter("ID");
+        String id = request.getParameter("id");
         // response.sendRedirect("/joinMember.jsp");
         if(request.getParameter("idnotDup")!=null){
             idnotDup = Boolean.parseBoolean(request.getParameter("idnotDup")); 
@@ -51,8 +51,8 @@ public class JoinMemberServlet extends HttpServlet {
             String identification_number = request.getParameter("identification_number"); // ex) 010 011
             String number = identification_number+"-"+request.getParameter("number"); // 전화번호 나머지
             String email = request.getParameter("email");
-            id = request.getParameter("ID");
-            String pw = request.getParameter("PW");
+            id = request.getParameter("id");
+            String pw = request.getParameter("pw");
     
             System.out.println(name);
     
