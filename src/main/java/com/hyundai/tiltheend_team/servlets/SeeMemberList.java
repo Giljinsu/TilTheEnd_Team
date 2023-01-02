@@ -28,8 +28,9 @@ public class SeeMemberList extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        System.out.println(userList);
-        String path = "/";
+
+        request.setAttribute("userList", userList);
+        String path = "/seeMemberList.jsp";
         RequestDispatcher requestDispatcher = request.getRequestDispatcher(path);
         requestDispatcher.forward(request, response);
     }

@@ -182,7 +182,7 @@ public class SurveyResultDB {
     public ArrayList getUserList() throws SQLException {
         Common common = new Common();
         Statement statement = common.getStatement();
-        String query = "SELECT * FROM USER";
+        String query = "SELECT * FROM USERS";
         ResultSet resultSet = statement.executeQuery(query);
         ArrayList userList = new ArrayList();
         while (resultSet.next()) {
