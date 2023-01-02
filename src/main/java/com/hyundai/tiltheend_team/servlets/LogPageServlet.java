@@ -24,12 +24,14 @@ public class LogPageServlet extends HttpServlet {
         LoginDao loginDao = new LoginDao();
         String userId = "";
         String userPassword = "";
+        String userName ="";
         result = 0;
-
+    
         if(request.getParameter("userId")!=null&&request.getParameter("userPassword")!=null) {
             if(request.getParameter("userId")!=""&&request.getParameter("userPassword")!=""){
             userId = request.getParameter("userId");
             userPassword = request.getParameter("userPassword");
+            userName = loginDao.getName(userId);
             result = loginDao.login(userId, userPassword);
         }
         }
@@ -42,10 +44,12 @@ public class LogPageServlet extends HttpServlet {
                 httpSession = request.getSession(); // 생성
                 httpSession.setAttribute("userId", userId);
                 httpSession.setAttribute("userPassword", userPassword);
+                httpSession.setAttribute("userName", userName);
             } else if(httpSession != httpSessionID_Compare) {
                 httpSession =request.getSession(); //생성
                 httpSession.setAttribute("userId", userId); // httpSession에 저장
                 httpSession.setAttribute("userPassword", userPassword);
+                httpSession.setAttribute("userName", userName);
             }
             // 어드민 확인용
             if(loginDao.isAdmin(userId)) {

@@ -42,4 +42,8 @@ public class RemoveSurveyPageServlet extends HttpServlet {
                 requestDispatcher.forward(request, response);
             }
     }
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        this.doGet(req, resp);
+    }
 }

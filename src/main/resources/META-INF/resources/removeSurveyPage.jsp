@@ -22,7 +22,7 @@
 
     <main class="d-flex align-items-center" style="height: 40rem">
       <div class="container">
-        <form action="/menu/removeSurveyPageServlet" onsubmit="return isempty()" method="">
+        <form action="/menu/removeSurveyPageServlet" onsubmit="return isempty()" method="post">
           <div class="container d-flex justify-content-center">
             <div class="input-group w-50">
               <label for="" class="input-group-text bg-secondary bg-opacity-50">비밀번호</label>
