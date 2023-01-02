@@ -23,6 +23,8 @@ public class InsertSurveyServlet extends HttpServlet {
 
         InsertSurvey insertSurvey = new InsertSurvey();
 
+        insertSurvey.isDuplicate(ID);
+
         for (int i = 1; i < 7; i++) {
             String question = "Q" + i;
             String answer = request.getParameter("Q" + i);
