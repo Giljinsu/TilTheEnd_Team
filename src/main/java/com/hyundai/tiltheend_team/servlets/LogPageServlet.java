@@ -40,7 +40,7 @@ public class LogPageServlet extends HttpServlet {
         String path = null;
         if(result == 1) {
             //로그인 성공
-            httpSession = request.getSession(false); // 존재하면 인스턴스화r
+            httpSession = request.getSession(false); // 존재하면 인스턴스화
             if(httpSession == null) {
                 httpSession = request.getSession(); // 생성
                 httpSession.setAttribute("userId", userId);

@@ -1,11 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
+<!-- 설문확인 페이지 -->
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>메인화면</title>
+		<title>설문확인에러</title>
 		<link
 			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
 			rel="stylesheet"
@@ -19,32 +20,23 @@
 
 	<body>
 		<%@ include file="header_login.jsp" %>
-
-		<main class="" style="background-color: rgba(248, 243, 242);">
+		<main class="d-flex align-items-center" style="height: 40rem">
 			<div class="container">
-				<div id="carouselControlId" class="carousel slide" data-bs-ride="carousel">
-					<div class="carousel-inner">
-						<div class="carousel-item active" >
-							<img class="w-100" src="/images/현대자동차.png" alt="">
-						</div>
-						<div class="carousel-item" >
-							<img class="w-100" src="/images/현대자동차1.png" alt="">
-						</div>
-						<div class="carousel-item" >
-							<img class="w-100" src="/images/현대자동차2.png" alt="">
-						</div>
-					</div>
-					<button class="carousel-control-prev" data-bs-target="#carouselControlId" data-bs-slide="prev">
-						<span class="carousel-control-prev-icon"></span>
-					</button>
-					<button class="carousel-control-next" data-bs-target="#carouselControlId" data-bs-slide="next">
-						<span class="carousel-control-next-icon"></span>
-					</button>
+			<%
+				String userName = (String) request.getAttribute("userName");
+			%>
+			<script>
+				alert("<%=userName%>님은 설문작성을 아직 하지 않으셨습니다."); // alert창을 띄워서 설문작성 안했다고 알려줌.
+				window.location.href = '/indexLogined.jsp'; // alert창을 클릭하면 메인화면으로 이동
+			</script>
+				<div>
+
 				</div>
 			</div>
 		</main>
 
 		<%@ include file="footer.jsp" %>
+
 		<script
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"

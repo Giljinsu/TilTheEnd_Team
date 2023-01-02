@@ -28,19 +28,21 @@ public class SeeUserSurveyServlet extends HttpServlet {
         SurveyResultDB surveyResultDB = new SurveyResultDB();
         ArrayList entireStat = new ArrayList<>();
 
-        String userId = "jinsu01";
+        // String userId = "jinsu01";
+        String userId = "UID01";
         // 이 user가 설문을 작성했는지 부터 파악하기
 
-        // HttpSession httpSession = null;
-        // httpSession = request.getSession(false); // 존재하면 인스턴스화r
-        // userId = (String) httpSession.getAttribute("userId");
+        HttpSession httpSession = null;
+        httpSession = request.getSession(false); // 세션이 존재하면 가져온다.
+        userId = (String) httpSession.getAttribute("userId");
 
         try {
-            if (surveyResultDB.hasSurvey(userId)) { // user가 설문을 작성했다면. 설문내용을 보여주는 페이지로 이동하기
+            boolean didSurvey = surveyResultDB.hasSurvey(userId); // user가 설문을 작성했는가?
+            String userName = surveyResultDB.getUserName(userId); // user 이름 가져오기
+            if (didSurvey) { // user가 설문을 작성했다면. 설문내용을 보여주는 페이지로 이동하기
                 entireStat = surveyResultDB.getEntireCount(); // 전체통계 페이지에서 활용한 함수 재활용하기. 질문리스트를 뽑기에 편해서.
                 // user가 답변한 내용을 불러오는 함수가 필요함.
                 ArrayList userAnswerList = surveyResultDB.getSurveyById(userId);
-                String userName = surveyResultDB.getUserName(userId);
                 request.setAttribute("entireStat", entireStat); // 변수넘기기
                 request.setAttribute("userId", userId); // userId 넘기기
                 request.setAttribute("userAnswerList", userAnswerList); // userId 넘기기
@@ -51,7 +53,10 @@ public class SeeUserSurveyServlet extends HttpServlet {
                 requestDispatcher.forward(request, response);
             } else { // survey가 없으면
                 // pop up 창으로 설문을 아직 작성안하셨습니다! 알려주기
-
+                request.setAttribute("userName", userName); // userName 넘기기
+                String path = "/see_user_survey_popup.jsp";
+                RequestDispatcher requestDispatcher = request.getRequestDispatcher(path);
+                requestDispatcher.forward(request, response);
             }
         } catch (SQLException e) {
             e.printStackTrace();
