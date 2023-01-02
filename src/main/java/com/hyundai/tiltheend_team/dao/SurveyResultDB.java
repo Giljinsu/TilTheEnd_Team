@@ -177,4 +177,34 @@ public class SurveyResultDB {
         }
         return userName;
     }
+
+    // 회원리스트 뽑아오기
+    public ArrayList getUserList() throws SQLException {
+        Common common = new Common();
+        Statement statement = common.getStatement();
+        String query = "SELECT * FROM USER";
+        ResultSet resultSet = statement.executeQuery(query);
+        ArrayList userList = new ArrayList();
+        while (resultSet.next()) {
+            HashMap row = new HashMap<>();
+            String userId = resultSet.getString("USER_ID");
+            String userPw = resultSet.getString("USER_PW");
+            String userPrivileges = resultSet.getString("PRIVILEGES");
+            String userName = resultSet.getString("USER_NAME");
+            String userSex = resultSet.getString("USER_SEX");
+            String userPhoneNum = resultSet.getString("PHONENUMBER");
+            String userEmail = resultSet.getString("EMAIL");
+            String userAge = resultSet.getString("AGE");
+            row.put("userId", userId);
+            row.put("userPw", userPw);
+            row.put("userPriviliges", userPrivileges);
+            row.put("userName", userName);
+            row.put("userSex", userSex);
+            row.put("userPhoneNum", userPhoneNum);
+            row.put("userEmail", userEmail);
+            row.put("userAge", userAge);
+            userList.add(row);
+        }
+        return userList;
+    }
 }
