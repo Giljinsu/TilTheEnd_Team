@@ -38,4 +38,31 @@ public class LoginDao {
         }
         return 0; // 로그인 실패
     }
+
+    public boolean isAdmin(String id) {
+        Common common = new Common();
+        Statement statement = common.getStatement();
+        String query = "SELECT USER_ID, USER_PW, PRIVILEGES FROM users WHERE USER_ID='"+id+"'";
+        ResultSet resultSet = null;
+        String privilege = "";
+        try {
+            resultSet = statement.executeQuery(query);
+            while(resultSet.next()) {
+                privilege = resultSet.getString("PRIVILEGES");
+            }
+            if(privilege.equals("ADMIN")) {
+                return true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                resultSet.close();
+                statement.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return false;
+    }
 }
