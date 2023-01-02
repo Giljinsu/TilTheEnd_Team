@@ -18,7 +18,7 @@
     <header class="bg border-bottom">
       <nav class="navbar navbar-expand-sm fw-bold">
         <div class="container">
-          <a href="/indexLogined.jsp" class="navbar-brand">
+          <a href="/admin.jsp" class="navbar-brand">
             <img src="https://www.hyundai.com/static/images/hyu_logo_og_image.jpg" width="150" class="" alt="" />
           </a>
           <a href="#collapseId" class="navbar-toggler" data-bs-toggle="collapse">
