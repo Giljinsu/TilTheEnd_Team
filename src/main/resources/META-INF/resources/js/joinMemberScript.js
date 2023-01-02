@@ -6,8 +6,8 @@ function validateForm(test) {
     if(isFin) {
         return true;
     }
-    let idValue = document.querySelector("#ID").value;
-    let pwValue = document.querySelector("#PW").value;
+    let idValue = document.querySelector("#id").value;
+    let pwValue = document.querySelector("#pw").value;
     let nameValue = document.querySelector("#name").value;
     let ageValue = document.querySelector("#age").value;
     let numberValue = document.querySelector("#number").value;

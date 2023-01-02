@@ -17,7 +17,7 @@
   <body>
     <%@ include file="header_notlogin.jsp" %>
     <% String result = (String)request.getAttribute("result");%>
-    <form class="" onsubmit="return validateForm()" action="/login/logPageServlet" method="post">
+    <form class="" onsubmit="return validateForm()" action="/login/logPageServlet" method="post ">
       <!-- 링크 추가 필요 지금은 현재페이지에서 값을 가지고 주소에 출력 -->
       <div class="container">
         <div class="text-center m-3">
