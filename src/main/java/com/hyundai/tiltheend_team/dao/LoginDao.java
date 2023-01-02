@@ -29,7 +29,7 @@ public class LoginDao {
             e.printStackTrace();
         } finally {
             try {
-                resultSet.close();
+                // resultSet.close();
                 statement.close();
             } catch (SQLException e) {
                 e.printStackTrace();
