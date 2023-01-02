@@ -18,7 +18,7 @@ public class JoinMemberServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         JoinMember joinMember = new JoinMember();
         String isFinish = request.getParameter("isFinish");
-        String ID = request.getParameter("ID");
+        String id = request.getParameter("ID");
         // response.sendRedirect("/joinMember.jsp");
         if(request.getParameter("idnotDup")!=null){
             idnotDup = Boolean.parseBoolean(request.getParameter("idnotDup")); 
@@ -26,8 +26,8 @@ public class JoinMemberServlet extends HttpServlet {
         
         RequestDispatcher requestDispatcher = null;        
         if(isFinish!=null&&!isFinish.equals("fin")) {
-            if(ID != "") {
-                int isTrue = joinMember.idCheck(ID);
+            if(id != "") {
+                int isTrue = joinMember.idCheck(id);
                 if(isTrue==1) {
                     //같다
                     request.setAttribute("isDup", "중복된 ID 입니다!");
@@ -51,12 +51,12 @@ public class JoinMemberServlet extends HttpServlet {
             String identification_number = request.getParameter("identification_number"); // ex) 010 011
             String number = identification_number+"-"+request.getParameter("number"); // 전화번호 나머지
             String email = request.getParameter("email");
-            ID = request.getParameter("ID");
-            String PW = request.getParameter("PW");
+            id = request.getParameter("ID");
+            String pw = request.getParameter("PW");
     
             System.out.println(name);
     
-            joinMember.insertUser(name, age, sex, identification_number, number, email, ID, PW);
+            joinMember.insertUser(name, age, sex, identification_number, number, email, id, pw);
             // requestDispatcher = request.getRequestDispatcher("/index.html");
             // requestDispatcher.forward(request, response);
             response.sendRedirect("/index.html");
