@@ -25,13 +25,13 @@
 				<div id="carouselControlId" class="carousel slide" data-bs-ride="carousel">
 					<div class="carousel-inner">
 						<div class="carousel-item active" >
-							<img class="w-100" src="./images/현대자동차.png" alt="">
+							<img class="w-100" src="./images/car1.png" alt="">
 						</div>
 						<div class="carousel-item" >
-							<img class="w-100" src="./images/현대자동차1.png" alt="">
+							<img class="w-100" src="./images/car2.png" alt="">
 						</div>
 						<div class="carousel-item" >
-							<img class="w-100" src="./images/현대자동차2.png" alt="">
+							<img class="w-100" src="./images/car3.png" alt="">
 						</div>
 					</div>
 					<button class="carousel-control-prev" data-bs-target="#carouselControlId" data-bs-slide="prev">
