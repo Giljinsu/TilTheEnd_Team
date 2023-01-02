@@ -2,7 +2,7 @@
 
 ### KH Acadmey Final Project **끝까지버팀**입니다.
 
-# **Background & Why**
+# **Background**
 
 현대자동차 고객들의 만족도를 조사하기 위해 만들었습니다.
 
