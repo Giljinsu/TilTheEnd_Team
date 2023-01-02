@@ -31,8 +31,8 @@ public class InsertSurveyServlet extends HttpServlet {
             insertSurvey.insertSurvey(ID, question, answer);
         }
 
-        RequestDispatcher requestDispatcher = null;
         response.sendRedirect("/indexLogined.jsp");
+        // RequestDispatcher requestDispatcher = null;
         // requestDispatcher = request.getRequestDispatcher("index.html");
         // requestDispatcher.forward(request, response);
     }
