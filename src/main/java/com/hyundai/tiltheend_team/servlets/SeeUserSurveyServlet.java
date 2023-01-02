@@ -23,14 +23,11 @@ public class SeeUserSurveyServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8"); // 한글세팅
 
         // 내가 누군지 먼저 파악해야함. session을 통해서 userId를 파악해야 함. - 로그인이 해결되어야 가능.
-        // 일단 userId='UID01' 이라고 가정하고 페이지 불러오자.
 
         SurveyResultDB surveyResultDB = new SurveyResultDB();
         ArrayList entireStat = new ArrayList<>();
 
-        // String userId = "jinsu01";
-        String userId = "UID01";
-        // 이 user가 설문을 작성했는지 부터 파악하기
+        String userId = null;
 
         HttpSession httpSession = null;
         httpSession = request.getSession(false); // 세션이 존재하면 가져온다.
