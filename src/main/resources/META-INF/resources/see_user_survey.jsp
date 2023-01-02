@@ -20,7 +20,7 @@
 	</head>
 
 	<body>
-		<%@ include file="header_login.jsp" %>
+		<%@ include file="header_admin.jsp" %>
 
 		<main class="d-flex align-items-center" style="height: 40rem">
 			<div class="container d-flex justify-content-center">
