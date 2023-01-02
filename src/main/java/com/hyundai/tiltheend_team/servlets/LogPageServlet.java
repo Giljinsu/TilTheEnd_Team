@@ -50,7 +50,12 @@ public class LogPageServlet extends HttpServlet {
                 httpSession.setAttribute("userId", userId); // httpSession에 저장
                 httpSession.setAttribute("userPassword", userPassword);
             }
-            path = "/indexLogined.jsp";
+            // 어드민 확인용
+            if(loginDao.isAdmin(userId)) {
+                path="/admin.jsp";
+            } else{
+                path = "/indexLogined.jsp";
+            }
             result =0;
         } else {
             //로그인 실패
