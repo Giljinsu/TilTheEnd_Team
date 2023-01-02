@@ -38,7 +38,7 @@
               </div>
             </div>
             <div class="navbar-nav">
-              <a href="/login/logPageServlet" class="nav-link">로그아웃</a>
+              <a href="/login/logOutPageServlet" class="nav-link">로그아웃</a>
             </div>
           </div>
         </div>
