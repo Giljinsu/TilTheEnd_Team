@@ -42,7 +42,7 @@
 					</button>
 				</div>
 			</div>
-		</main>
+		</main> 
 
 		<%@ include file="footer.jsp" %>
 		<script
