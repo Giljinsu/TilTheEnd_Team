@@ -30,8 +30,6 @@
               <div class="dropdown">
                 <a href="" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">설문 확인/삭제</a>
                 <div class="dropdown-menu">
-                  <a href="/menu/surveyResultServlet" class="dropdown-item">전체 통계</a>
-                  <a href="/menu/clientResultServlet" class="dropdown-item">회원별 통계</a>
                   <a href="/menu/seeUserSurveyServlet" class="dropdown-item">설문 확인</a>
                   <a href="/menu/removeSurveyPageServlet" class="dropdown-item">설문 삭제</a>
                 </div>
