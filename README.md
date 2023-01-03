@@ -38,6 +38,8 @@
     <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
     <img src="https://img.shields.io/badge/zoom-0652E2?style=for-the-badge&logo=zoom&logoColor=white">
 
+# Project info
+
 ### 프로젝트 기간
 
 - 2022.12.26 ~ 2023.01.02
