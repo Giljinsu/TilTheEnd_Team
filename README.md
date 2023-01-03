@@ -38,6 +38,32 @@
     <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
     <img src="https://img.shields.io/badge/zoom-0652E2?style=for-the-badge&logo=zoom&logoColor=white">
 
+### 프로젝트 기간
+
+- 2022.12.26 ~ 2023.01.02
+
+### video
+
+- [youtube](https://www.youtube.com/watch?v=fHo77uxeqzA)
+
+# 주요 코드
+
+### 세션 얻기
+
+```
+String ID = (String) httpSession.getAttribute("userId");
+```
+
+getAttribute를 통해 유저의 id를 가져온다.
+
+### 구름
+
+```
+<input class="form-control" type="text" name="id" value="<%=id%>" id="id"/>
+```
+
+구름 IDE에서는 input 태그의 id가 대문자면 인식하지 못한다.
+
 # **Team Members**
 
 ### Team TilTheEnd
