@@ -66,6 +66,21 @@ getAttribute를 통해 유저의 id를 가져온다.
 
 구름 IDE에서는 input 태그의 id가 대문자면 인식하지 못한다.
 
+### 어드민 계정 확인
+
+```
+if(loginDao.isAdmin(userId)) {
+        path="/admin.jsp";
+    } else{
+        path = "/indexLogined.jsp";
+    }
+
+RequestDispatcher requestDispatcher = request.getRequestDispatcher(path);
+requestDispatcher.forward(request, response);
+```
+
+일반 사용자와 어드민을 구분해서 페이지를 이동하도록 만들었다.
+
 # **Team Members**
 
 ### Team TilTheEnd
